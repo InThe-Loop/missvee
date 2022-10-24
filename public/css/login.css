@@ -1,0 +1,128 @@
+/**
+* Login
+*/
+.login {
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+.login_box {
+    top: 50%;
+    left: 50%;
+    width: 96%;
+    height: 450px;
+    display: flex;
+    overflow: hidden;
+    background: #fff;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-shadow: 1px 4px 22px -8px #0004;
+}
+.login-left {
+  width: 40%;
+  height: 100%;
+  padding: 25px 25px;
+  
+}
+.login-left input[type="checkbox"] + label:before {
+  border: solid 1px #0004;
+}
+.login-left a.link {
+    color: #000;
+    font-weight: 400;
+}
+.login-left a.link:hover {
+  color: #ffc107;
+  text-decoration: none;
+}
+.login-left .top_link{
+  height: 20px
+}
+.login-left .contact{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+.login-left form {
+  width: inherit;
+}
+.login-left form .btn {
+  border: 0;
+   height: 35px;
+}
+.login-left h3 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.login-left {
+	background-color: #fff;
+}
+.login-right {
+    width: 60%;
+    height: 100%;
+    color: #fff;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+	background: url(/images/banners/white_dress.jpg) 30%;
+}
+.login-right .right-text {
+  height: 100%;
+  position: relative;
+  transform: translate(0%, 45%);
+}
+.right-text h2 {
+  width: 100%;
+  display: block;
+  font-size: 50px;
+  font-weight: 500;
+  text-align: center;
+}
+.right-text h5 {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 19px;
+  font-weight: 400;
+}
+.login-left .top_link img {
+    width: 28px;
+    padding-right: 7px;
+
+    margin-top: -3px;
+}
+.login-left .form-check {
+  padding: 0;
+}
+.login-left .col-form-label {
+  line-height: 0.6;
+}
+
+@media screen and (max-width: 768px) {
+    button.no-border {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+  .login {
+    height: 750px;
+  }
+  .login_box {
+    height: 700px;
+    display: inline-grid;
+  }
+  .login-left, 
+  .login-right {
+    width: 100%;
+  }
+  .login-right {
+    height: 350px;
+  }
+}

@@ -1,0 +1,142 @@
+/**
+*   Checkout
+*/
+.no-border {
+    border: none;
+    text-transform: none;
+    letter-spacing: 1px;
+}
+img.order-image {
+    width: 80px;
+    vertical-align: middle;
+}
+.align-top {
+    vertical-align: top;
+}
+select.checkout {
+    border: 0;
+    outline: 0;
+    height:  2.75rem;
+    font: inherit;
+    cursor: pointer;
+    appearance: none;
+    border-radius: 0;
+    padding: 0 4em 0 1em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url(../../images/icons/caret-down.png) no-repeat right 0.8em center/1.4em, linear-gradient(to left, rgba(255, 255, 255, 0.3) 3em, rgba(255, 255, 255, 0.2) 3em);
+    box-shadow: 0 0 1em 0 rgb(0 0 0 / 20%);
+}
+select.checkout option {
+    color: inherit;
+    background-color: transparent;
+}
+.quantity-square {
+    padding: 5px;
+    border-color: #ccc;
+    background-color: #ccc;
+}
+.yc-card-input-wrapper input {
+    border-color: red;
+}
+.loading-button{
+    transition: 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+.loading-button:hover span {
+    transform: translateY(-3px);
+}
+.loading-button:focus {
+    outline:none;
+}
+.loading-button span {
+    position:absolute;  
+    right:32px;
+    top:16px;
+    transition:0.3s;
+    transition-delay:0.1s;
+}
+.loading-button.loading span{
+    top:-50px;
+    right:0;
+    display:none;
+}
+.loading-button.success span{
+    top:-50px;
+}
+.loading-button.success{
+    pointer-events:none;
+} 
+.loading-button.loading{
+    animation: bounce 1s infinite;
+    pointer-events:none;
+}
+.loading-button:after{
+    position: absolute;
+    content: "✔";
+    color: transparent;  
+    text-shadow: 0 0 0 white;
+    display:block;
+    top: 60px;
+    right: 40%;
+    transition: 0.3s;
+    transition-delay: 0.1s;
+}
+.loading-button.success:after {
+    top: 10px;
+    right: 100px;
+}
+.yc-basic-dropin-layout .yc-card-input-wrapper {
+    height: 2.75rem !important;
+    border-radius: 0 !important;
+}
+.yc-basic-dropin-layout label {
+    color: #000 !important;
+    font-size: 0.8rem !important;
+}
+.yc-basic-dropin-layout svg {
+    margin-top: -5px;
+    border-radius: 50%;
+}
+.yc-basic-dropin-layout .yc-expiry-cvv-holder {
+    margin-top: 0 !important;
+}
+.show-add-fields {
+    top: -10px;
+    cursor: pointer;
+    margin-left: 5px;
+    position: absolute;
+    font-size: x-large;
+}
+#ip-address {
+    font-size: 11px;
+    color: #858282;
+    text-align: center;
+}
+.form-check {
+    padding-left: 0;
+}
+.col-form-label {
+    line-height: 1.5;
+    margin-left: 40px;
+}
+#agree-error,
+#payment-error {
+    color: #ff6a6a;
+    font-weight: bold;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+        height:60px;
+    }
+    40% {
+        transform: translateY(-30px);
+        height:68px;
+    }
+    60% {
+        transform: translateY(-15px);
+        height:68px;
+    }
+}

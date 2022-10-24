@@ -1,0 +1,21 @@
+/**
+* Shopping cart
+*/
+.alert-success {
+    border-radius: 0;
+    font-weight: bold;
+    text-align: center;
+    border-color: #ecedee;
+    background-color: #ecedee;
+}
+.alert li {
+    list-style: none;
+    text-transform: uppercase;
+}
+img.cart-image {
+    width: 70px;
+    vertical-align: middle;
+}
+.alert h4 {
+    margin: 0;
+}
