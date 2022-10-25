@@ -1,5 +1,5 @@
 $(function() {
-    // Check cookie 
+    // Check cookie
     if ($.cookie('missvee') != "accepted") {
         // $('#cookieAcceptBar').show();
         $('#cookieModal').modal('show');
@@ -8,9 +8,8 @@ $(function() {
     $('#cookieAcceptBarConfirm').on('click',function(){
         $.cookie('missvee', 'accepted', {
           path: "/",
-          secure: false,
+          secure: true,
           expires: 365,
-          testing: true,
           domain: '.missveefamouslook.store'
         });
         $('#cookieModal').modal('hide');
