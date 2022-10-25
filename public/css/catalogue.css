@@ -587,6 +587,13 @@
 }
 
 @media (max-width: 480px) {
+    .product-info-tabs .nav-tabs {
+        margin: 0 auto;
+        width: fit-content;
+    }
+    .product-info-tabs .nav-tabs .nav-link {
+        font-size: 20px;
+    }
     .catalogue .product .product-inner figure img {
         min-height: 230px;
         max-height: 230px;

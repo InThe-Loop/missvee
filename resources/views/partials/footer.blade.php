@@ -10,6 +10,8 @@
                         <br />
                         <a href="{{ route('contact') }}">Conatct us</a>
                         <br />
+                        <a data-toggle="modal" data-target="#returnsModal" href="#">Returns policy</a>
+                        <br />
                         <a data-toggle="modal" data-target="#privacyModal" href="#">Privacy policy</a>
                         <br />
                         <a data-toggle="modal" data-target="#termsModal" href="#">Term and conditions</a>

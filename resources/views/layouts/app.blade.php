@@ -17,8 +17,10 @@
             </div>
             
             @include('partials.footer')
+            @include('partials.returns')
             @include('partials.privacy')
             @include('partials.terms')
+            @include('partials.cookies')
         </div>
     </body>
 
@@ -35,6 +37,8 @@
     <script src="{{ asset('owl.carousel/js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('slick/slick.min.js') }}"></script>
     <script src="{{ asset('slick/modern.slider.js') }}"></script>
+    <script src="{{ asset('jquery-cookie/jquery.cookie.min.js') }}"></script>
+    <script src="{{ asset('jquery-cookie/cookie-consent.js') }}"></script>
     <script src="{{ asset('js/moment.js') }}"></script>
     <script src="{{ asset('js/util.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
