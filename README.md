@@ -1,54 +1,52 @@
-# ecommerce-laravel-fullstack
-
-# Link : http://vampireecommerce.herokuapp.com
-
-This repo is based on the [youtube series](https://www.youtube.com/playlist?list=PLEhEHUEU3x5oPTli631ZX9cxl6cU_sDaR) by [@drehimself](https://github.com/drehimself)
-
+# MissVee&trade;
 ## Features
 
--   Fully functional E-commerce website front-end and back-end built from scratch.
--   Using laravel voyager as an admin panel for the site.
--   javascript, jquery, bootstrap and css for the front-end.
+-   Fully functional ecommerce website front-end and back-end.
+-   Using Laravel Voyager as an Admin Panel for the site.
+-   JavaScript, jQuery, Bootstrap and CSS for the front-end.
 -   Intelligent searching mechanism for products.
 -   Awesome Cart package that uses session.
 -   An artisan command to seed the database with all neccessary dummy data, even for voyager tables (php artisan ecommerce:install).
 -   Different user roles and privileges.
 -   Categories, tags and price filtering for easier search for products.
--   And much more features.
+-   And many more features.
+- MySQL 8 database
+- PHP 7.4 and up
 
 ---
 
-## Installation Guide
+## Laravel Sponsors
 
-1. clone this repo to your local machine
-1. copy `.example.env` to `.env` file
-1. add your database credentials
-1. run `composer install`
-1. run `npm install && npm run dev`
-1. run `php artisan key:generate`
-1. run `php artisan ecommerce:install`
-1. credentials to access admin panel (email: `admin@admin.com`, password: `password`)
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
--   Home Page
+### Premium Partners
 
-![Screenshot (35)](https://user-images.githubusercontent.com/39973541/68545143-e8aeb280-03d2-11ea-8bb1-1c245150e432.png)
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[OP.GG](https://op.gg)**
+- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+- **[Lendio](https://lendio.com)**
 
--   Shopping Page
+## Contributing
 
-![Screenshot (36)](https://user-images.githubusercontent.com/39973541/68545195-5bb82900-03d3-11ea-801f-40d1f8c3334a.png)
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
--   Cart Page
+## Code of Conduct
 
-![Screenshot (37)](https://user-images.githubusercontent.com/39973541/68545206-82765f80-03d3-11ea-8c5d-95ce0fc68e83.png)
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
--   Checkout page
+## Security Vulnerabilities
 
-![Screenshot (38)](https://user-images.githubusercontent.com/39973541/68545217-9a4de380-03d3-11ea-8a97-18057d9ea3f2.png)
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
--   Admin Orders BREAD
+## License
 
-![Screenshot (33)](https://user-images.githubusercontent.com/39973541/68546326-ab035700-03dd-11ea-860c-7912775e2359.png)
-
--   Admin Products BREAD
-
-![Screenshot (34)](https://user-images.githubusercontent.com/39973541/68546338-d4bc7e00-03dd-11ea-9934-4c7329435f8a.png)
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
