@@ -1,15 +1,16 @@
 $(function() {
     // Check cookie 
-    if ($.cookie('missvee') != "active") {
+    if ($.cookie('missvee') != "accepted") {
         // $('#cookieAcceptBar').show();
         $('#cookieModal').modal('show');
     }
     // Assign cookie on click
     $('#cookieAcceptBarConfirm').on('click',function(){
-        $.cookie('missvee', 'active', {
+        $.cookie('missvee', 'accepted', {
           path: "/",
           secure: false,
           expires: 365,
+          testing: true,
           domain: '.missveefamouslook.store'
         });
         $('#cookieModal').modal('hide');
