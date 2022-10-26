@@ -23,11 +23,15 @@
                         <br /><br />
                         Powered by
                         <img src="{{ asset('images/icons/yoco_colour.svg') }}" class="yoco" alt="Yoco Approved!" />
-                        <img src="{{ asset('images/in_the_loop.png') }}" class="intheloop" alt="InTheLoop Software Solutions" />
                     </p>
+                    <p>Our products</p>
+                    <img src="{{ asset('images/tropical_salads.png') }}" class="intheloop" alt="MissVee Tropical Salads" />
+                    <img src="{{ asset('images/in_the_loop.png') }}" class="intheloop" alt="InTheLoop Software Solutions" />
+                    <img src="{{ asset('images/foundation.png') }}" class="intheloop" alt="MissVee Gracious God Foundation" />
                 </div>
                 <div class="col-md-3 text-start">
                     <p>
+                        <strong>Our offices</strong><br />
                         Cnr Richmond & Clydesdale, <br />
                         Crystal Park,<br />
                         Benoni,<br />

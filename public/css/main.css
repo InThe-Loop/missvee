@@ -806,7 +806,7 @@ img.icon-loggedin {
 		max-width: 40px !important;
 	}
 	#footer .intheloop {
-		max-width: 50% !important;
+		height: 45px !important;
 	}
 }
 
@@ -884,11 +884,12 @@ html {
     font-size: 10px;
 }
 #footer .intheloop {
-    max-width: 25%;
-    display: block;
+    padding: 0;
+    height: 70px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
 }
 #footer .yoco {
     max-width: 15%;
