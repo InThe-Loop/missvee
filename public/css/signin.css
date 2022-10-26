@@ -122,4 +122,8 @@
   .login-right {
     height: 350px;
   }
+  .login-left form .social {
+    width: 100%;
+    margin-bottom: 15px;
+  }
 }

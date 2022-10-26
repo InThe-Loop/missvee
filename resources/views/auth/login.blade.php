@@ -53,24 +53,24 @@
                             <button type="submit" class="btn btn-secondary no-border">
                                 {{ __('Sign in') }}
                             </button>
-                            
                             @if (str_replace(url('/'), '', url()->previous()) == '/cart')
-                                <a href="{{ route('checkout.guest'  ) }}" class="btn btn-primary no-border">
+                                <a href="{{ route('checkout.guest'  ) }}" class="btn btn-warning no-border mr-1">
                                     Guest checkout
-                                </button>
+                                </a>
                             @endif
-
+                            <a href="" class="btn btn-primary social">
+                                <i class="fab fa-facebook fa-fw"></i> Login with Facebook
+                            </a>
+                            <a href="" class="btn btn-danger social">
+                                <i class="fab fa-google fa-fw"></i> Login with Google
+                            </a>
+                        </div>
+                        <div class="col-md-12">
                             @if (Route::has('password.request'))
                                 <a class="link" href="{{ route('password.request') }}">
                                     {{ __('Forgot your password?') }}
                                 </a>
                             @endif
-                            <!-- <a href="/login/google" class="block btn btn-success">
-                                Login with Gmail
-                            </a>
-                            <a href="/login/facebook" class="block btn btn-success">
-                                Login with Facebook
-                            </a> -->
                         </div>
                     </div>
                 </form>
