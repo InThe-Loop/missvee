@@ -9,6 +9,14 @@ use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
 
 class FaceBookController extends Controller {
+
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/';
+
     /**
      * Login Using Facebook
      */
@@ -28,9 +36,10 @@ class FaceBookController extends Controller {
                     'password' => Hash::make($user->getName().'@'.$user->getId())
                 ]
             );
-
+            
             Auth::loginUsingId($saveUser->id);
-            return redirect()->route('welcome');
+
+            return redirect($this->redirectTo);
         }
         catch (\Throwable $th) {
             throw $th;
