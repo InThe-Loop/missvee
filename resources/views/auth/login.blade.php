@@ -58,10 +58,10 @@
                                     Guest checkout
                                 </a>
                             @endif
-                            <a href="" class="btn btn-primary social">
+                            <a href="{{ route('facebook.login') }}" class="btn btn-primary social">
                                 <i class="fab fa-facebook fa-fw"></i> Login with Facebook
                             </a>
-                            <a href="" class="btn btn-danger social">
+                            <a href="{{ route('google.login') }}" class="btn btn-danger social">
                                 <i class="fab fa-google fa-fw"></i> Login with Google
                             </a>
                         </div>

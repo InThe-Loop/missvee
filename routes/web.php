@@ -1,9 +1,26 @@
 <?php
 
 use App\CountryVisit;
+use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use TCG\Voyager\Facades\Voyager;
+use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\FaceBookController;
+
+// Auth routes
+Auth::routes();
+
+// Facebook Login URL
+Route::prefix('facebook')->name('facebook.')->group( function() {
+    Route::get('auth', [FaceBookController::class, 'loginUsingFacebook'])->name('login');
+    Route::get('callback', [FaceBookController::class, 'callbackFromFacebook'])->name('callback');
+});
+
+// Google URL
+Route::prefix('google')->name('google.')->group( function() {
+    Route::get('login', [GoogleController::class, 'loginWithGoogle'])->name('login');
+    Route::any('callback', [GoogleController::class, 'callbackFromGoogle'])->name('callback');
+});
 
 // home page
 Route::get('/', 'WelcomePageController@index')->name('welcome');
@@ -36,11 +53,6 @@ Route::get('/guest-checkout', 'CheckoutController@index')->name('checkout.guest'
 // Coupon
 Route::post('/coupon', 'CouponsController@store')->name('coupon.store');
 Route::delete('/coupon/', 'CouponsController@destroy')->name('coupon.destroy');
-
-// Auth routes
-Auth::routes();
-Route::get('/login/{provider}', 'Auth\LoginController@redirectToProvider');
-Route::get('/login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
 // Voyager visitors
 Route::group(['prefix' => 'admin'], function () {
