@@ -7,21 +7,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\FaceBookController;
 
-// Auth routes
-Auth::routes();
-
-// Facebook Login URL
-Route::prefix('facebook')->name('facebook.')->group( function() {
-    Route::get('auth', [FaceBookController::class, 'loginUsingFacebook'])->name('login');
-    Route::get('callback', [FaceBookController::class, 'callbackFromFacebook'])->name('callback');
-});
-
-// Google URL
-Route::prefix('google')->name('google.')->group( function() {
-    Route::get('login', [GoogleController::class, 'loginWithGoogle'])->name('login');
-    Route::any('callback', [GoogleController::class, 'callbackFromGoogle'])->name('callback');
-});
-
 // home page
 Route::get('/', 'WelcomePageController@index')->name('welcome');
 
@@ -62,3 +47,18 @@ Route::group(['prefix' => 'admin'], function () {
 
 // Log viewer
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->middleware('admin');
+
+// Auth routes
+Auth::routes();
+
+// Facebook Login URL
+Route::prefix('facebook')->name('facebook.')->group( function() {
+    Route::get('auth', [FaceBookController::class, 'loginUsingFacebook'])->name('login');
+    Route::get('callback', [FaceBookController::class, 'callbackFromFacebook'])->name('callback');
+});
+
+// Google URL
+Route::prefix('google')->name('google.')->group( function() {
+    Route::get('login', [GoogleController::class, 'loginWithGoogle'])->name('login');
+    Route::any('callback', [GoogleController::class, 'callbackFromGoogle'])->name('callback');
+});
