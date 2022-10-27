@@ -2,11 +2,11 @@
 
 namespace App\Mail;
 
+use App\Order;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use App\Order;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
 class OrderPlaced extends Mailable
 {
@@ -18,8 +18,7 @@ class OrderPlaced extends Mailable
      *
      * @return void
      */
-    public function __construct(Order $order)
-    {
+    public function __construct(Order $order) {
         $this->order = $order;
     }
 
@@ -28,8 +27,7 @@ class OrderPlaced extends Mailable
      *
      * @return $this
      */
-    public function build()
-    {
+    public function build() {
         return $this->markdown('emails.orders.placed');
     }
 }

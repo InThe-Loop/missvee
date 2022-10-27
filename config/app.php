@@ -30,6 +30,11 @@ return [
         'secret_key' => env('YOCO_SECRET_KEY'),
     ],
 
+    'payments_bcc' => [
+        'address' => env('MAIL_BCC_ADDRESS'),
+        'name' => env('MAIL_BCC_NAME'),
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -41,7 +46,7 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'production'),
+    'env' => env('APP_ENV', 'local'),
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +59,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -68,7 +73,6 @@ return [
     */
 
     'url' => env('APP_URL', 'http://localhost'),
-
     'asset_url' => env('ASSET_URL', null),
 
     /*

@@ -115,7 +115,10 @@ class CheckoutController extends Controller {
         // Success
         if (strtolower($status) === "successful") {
             $this->decreaseQuantities();
-            Mail::to($order->billing_email, $order->billing_name)->send(new OrderPlaced($order));
+            Mail::to($order->billing_email, $order->billing_name)
+                ->bcc(Config::get('app.payments_bcc.address'), Config::get('app.payments_bcc.name'))
+                ->send(new OrderPlaced($order));
+            
             Cart::instance('default')->destroy();
             session()->forget('coupon');
             return redirect()->route('welcome')->with('success', 'Your order is on its way! Please check your emails for more details.');
