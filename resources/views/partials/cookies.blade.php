@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="modal-body text-dark">
-				<p>Before you start browsing our website, please read and accept this clause on cookies.</p>
+				<p>We use cookies on our website to enhance your browsing experience. Please read and accept below.</p>
 				<p><strong>What are cookies</strong></p>
 				<p>A cookie is a small piece of information stored on your computer or smart phone by the web browser. The two types of cookies used
 				on the Website are described below.</p>
@@ -23,7 +23,6 @@
 				work, but may enhance your browsing experience.</p>
 			</div>
             <div class="modal-footer">
-				<button type="button" class="btn btn-secondary no-border mt-3 close-modal">I don't accept</button>
 				<button type="button" id="cookieAcceptBarConfirm" class="btn btn-primary no-border mt-3">I accept</button>
 				<!-- <button type="button" class="btn btn-default text-dark" data-dismiss="modal">Close</button> -->
             </div>
