@@ -9,8 +9,15 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use Laravel\Socialite\Facades\Socialite;
 
-class GoogleController extends Controller
-{
+class GoogleController extends Controller {
+
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/';
+
     public function loginWithGoogle()
     {
         return Socialite::driver('google')->redirect();
@@ -25,12 +32,13 @@ class GoogleController extends Controller
             if(!$is_user){
 
                 $saveUser = User::updateOrCreate([
-                    'google_id' => $user->getId(),
-                ],[
-                    'name' => $user->getName(),
-                    'email' => $user->getEmail(),
-                    'password' => Hash::make($user->getName().'@'.$user->getId())
-                ]);
+                        'google_id' => $user->getId(),
+                    ],[
+                        'name' => $user->getName(),
+                        'email' => $user->getEmail(),
+                        'password' => Hash::make($user->getName().'@'.$user->getId())
+                    ]
+                );
             }
             else {
                 $saveUser = User::where('email',  $user->getEmail())->update([
@@ -41,7 +49,7 @@ class GoogleController extends Controller
 
             Auth::loginUsingId($saveUser->id);
 
-            return redirect()->route('welcome');
+            return redirect($this->redirectTo);
         }
         catch (\Throwable $th) {
             throw $th;
