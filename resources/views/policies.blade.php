@@ -9,6 +9,11 @@
                 <div class="arrow"> Back</div>
             </a>
             <h3 class="lead text-dark mt-5">Our policies</h3>
+            <ul>
+                <li><a data-toggle="modal" data-target="#returnsModal" href="#">Returns policy</a></li>
+                <li><a data-toggle="modal" data-target="#privacyModal" href="#">Privacy policy</a></li>
+                <li><a data-toggle="modal" data-target="#termsModal" href="#">Term and conditions</a></li>
+            </ul>
         </div>
     </div>
 </div>
