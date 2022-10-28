@@ -13,6 +13,10 @@ Route::get('/', 'WelcomePageController@index')->name('welcome');
 // About us
 Route::get('/about-us', 'AboutController@index')->name('about');
 
+// Terms
+Route::get('/terms', 'PoliciesController@index')->name('terms');
+Route::get('/privacy', 'PoliciesController@index')->name('privacy');
+
 // Contact us
 Route::get('/contact', 'ContactController@index')->name('contact');
 Route::post('/contact/send', 'ContactController@sendContactEmail')->name('sendmail');
