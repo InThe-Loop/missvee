@@ -61,8 +61,8 @@
                             <a href="{{ route('facebook.login') }}" class="btn btn-primary social">
                                 <i class="fab fa-facebook fa-fw"></i> Login with Facebook
                             </a>
-                            <a href="{{ route('google.login') }}" class="btn btn-danger social">
-                                <i class="fab fa-google fa-fw"></i> Login with Google
+                            <a href="{{ route('google.login') }}">
+                                <img src="{{ asset('images/icons/google-icon.png') }}" class="social-icon" alt="Login with Google" />
                             </a>
                         </div>
                         <div class="col-md-12">

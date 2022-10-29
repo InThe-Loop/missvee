@@ -99,6 +99,11 @@
 .login-left .col-form-label {
   line-height: 1.6;
 }
+img.social-icon {
+  margin: 0;
+  max-height: 40px;
+  vertical-align: middle;
+}
 
 @media screen and (max-width: 768px) {
     button.no-border {
@@ -125,5 +130,8 @@
   .login-left form .social {
     width: 100%;
     margin-bottom: 15px;
+  }
+  img.social-icon {
+    max-height: 100%;
   }
 }
