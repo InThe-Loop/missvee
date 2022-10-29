@@ -40,6 +40,20 @@ class LoginController extends Controller
     }
 
     /**
+     * Get the post register / login redirect path.
+     *
+     * @return string
+     */
+    public function redirectPath()
+    {
+        // Do your logic to flash data to session...
+        session()->flash('message', 'success', 'Welcome, you have been successfully logged in. Please browse our product offerings below.');
+
+        // Return the results of the method we are overriding that we aliased.
+        return $this->redirectTo;
+    }
+
+    /**
      * Redirect the user to the GitHub authentication page.
      *
      * @return \Illuminate\Http\Response
@@ -64,7 +78,6 @@ class LoginController extends Controller
             $user = User::where('email', $providerUser->getEmail())->first();
         }
         if($user && $user->$provider . '_id' == null) {
-            dd('test');
             $user->update([$provider . '_id' => $providerUser->getId()]);
         }
         if(!$user) {

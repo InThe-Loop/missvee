@@ -11,13 +11,6 @@ use Laravel\Socialite\Facades\Socialite;
 class FaceBookController extends Controller {
 
     /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/';
-
-    /**
      * Login Using Facebook
      */
     public function loginUsingFacebook(){
@@ -38,8 +31,7 @@ class FaceBookController extends Controller {
             );
             
             Auth::loginUsingId($saveUser->id);
-
-            return redirect($this->redirectTo);
+            return redirect()->route('welcome')->with('success', 'Welcome ' . $user->getName() . '. You have been successfully logged in. Please browse our product offerings below.');
         }
         catch (\Throwable $th) {
             throw $th;
