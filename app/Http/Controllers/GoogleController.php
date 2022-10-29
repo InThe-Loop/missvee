@@ -11,13 +11,6 @@ use Laravel\Socialite\Facades\Socialite;
 
 class GoogleController extends Controller {
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/';
-
     public function loginWithGoogle()
     {
         return Socialite::driver('google')->redirect();
@@ -48,8 +41,7 @@ class GoogleController extends Controller {
             }
 
             Auth::loginUsingId($saveUser->id);
-
-            return redirect($this->redirectTo);
+            return redirect()->route('welcome')->with('success', 'Welcome ' . $user->getName() . '. You have been successfully logged in. Please browse our product offerings below.');
         }
         catch (\Throwable $th) {
             throw $th;
