@@ -2035,7 +2035,7 @@ footer .no-animation {
     height: 100%;
 }
 .carousel-inner {
-  height: 600px;
+  height: 100vh;
   display: block;
   background: #000;
 }
@@ -2210,7 +2210,7 @@ footer .no-animation {
 		font-size: 30px;
 	}
 	.carousel-inner {
-		height: 300px;
+		height: 350px;
 	}
 	.carousel-caption {
 		bottom: 0;
