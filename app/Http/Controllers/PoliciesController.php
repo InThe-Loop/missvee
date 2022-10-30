@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 class PoliciesController extends Controller
 {
-    public function index()
+    public function index($page)
     {
-        return view('policies');
+        return view('policies', ['page' => $page]);
     }
 }

@@ -18,3 +18,14 @@
     </div>
 </div>
 @endsection
+
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script type="text/javascript">
+    $(function() {
+        let page = "<?php echo $page; ?>";
+        $("#" + page + "Modal").modal("show");
+        $(".close-modal").on("click", function() {
+            $("#" + page + "Modal").modal("hide");
+        });
+    });
+</script>

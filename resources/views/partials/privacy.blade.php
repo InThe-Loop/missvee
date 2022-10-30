@@ -1,10 +1,10 @@
 <!-- privacy modal -->
-<div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModal" aria-hidden="true">
+<div class="modal modal-fullscreen fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModal" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title text-dark" id="myModalLabel">Our privacy policy</h4>
-                <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close text-dark close-modal" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -194,7 +194,7 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default text-dark" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default text-dark close-modal" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

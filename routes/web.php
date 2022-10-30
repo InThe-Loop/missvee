@@ -14,8 +14,7 @@ Route::get('/', 'WelcomePageController@index')->name('welcome');
 Route::get('/about-us', 'AboutController@index')->name('about');
 
 // Terms
-Route::get('/terms', 'PoliciesController@index')->name('terms');
-Route::get('/privacy', 'PoliciesController@index')->name('privacy');
+Route::get('/policies/{page}', 'PoliciesController@index')->name('policies');
 
 // Contact us
 Route::get('/contact', 'ContactController@index')->name('contact');

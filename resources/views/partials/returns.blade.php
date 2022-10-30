@@ -1,10 +1,10 @@
 <!-- privacy modal -->
-<div class="modal fade" id="returnsModal" tabindex="-1" role="dialog" aria-labelledby="returnsModal" aria-hidden="true">
+<div class="modal modal-fullscreen fade" id="returnsModal" tabindex="-1" role="dialog" aria-labelledby="returnsModal" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title text-dark" id="myModalLabel">Our returns policy</h4>
-                <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close text-dark close-modal" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -54,7 +54,7 @@
                 <p>If you return a product that does not comply with this policy, you may be liable to reimburse <strong>MissVee</strong> Famous Look for the cost of collecting the product from you and the cost of having the product returned to you.</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default text-dark" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default text-dark close-modal" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

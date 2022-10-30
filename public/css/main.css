@@ -2013,6 +2013,22 @@ footer .no-animation {
 	background-image: none;
 }
 
+.modal-fullscreen {
+	padding-right: 0 !important;
+} 
+.modal-fullscreen .modal-dialog {
+	min-width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.modal-fullscreen .modal-content {
+	height: auto;
+	min-height: 100%;
+	border-radius: 0;
+}
+
 @media screen and (max-width: 980px) {
 	.content p br {
 		display: none;
