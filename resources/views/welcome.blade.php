@@ -14,10 +14,51 @@
                     <h3>Save 30% on cart purchases over R5,000</h3>
                 </div>
             </div>
-        
-            <div class="Modern-Slider"> 
+
+            <!-- Carousel Banner -->
+            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                <!-- Slides -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <div class="fill" style="background-image:url({{ asset('images/banners/blue_dress.jpg') }});"></div>
+                        <div class="carousel-caption">
+                            <h2 class="slideUp">Exclusive evening wear</h2>
+                            <p class="animated fadeInRight">TV Apparel | Award ceremonies | Corporate events</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <div class="fill" style="background-image:url({{ asset('images/banners/red_dress.jpg') }});"></div>
+                        <div class="carousel-caption">
+                            <h2 class="slideUp">Grand entrance uniquely</h2>
+                            <p class="animated fadeInRight">Matric farewell | Graduation ceremonies</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <div class="fill" style="background-image:url({{ asset('images/banners/man_banner.png') }});"></div>
+                        <div class="carousel-caption">
+                            <h2 class="slideUp">Man's perfection</h2>
+                            <p class="animated fadeInRight">"One man's style must not be the rule of another's" - Vanessa NT.SA</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Controls -->
+                <a class="carousel-control-prev" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></li>
+                </ol>
+            </div>
+
+            <!-- <div class="Modern-Slider">  -->
                 <!-- Item -->
-                <div class="item"> 
+                <!-- <div class="item"> 
                     <div class="img-fill"> 
                         <img src="{{ asset('images/banners/red_dress.jpg') }}" alt="TV Aparel" /> 
                         <div class="info">
@@ -33,37 +74,38 @@
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>  -->
                 <!-- // Item -->
                 <!-- Item --> 
-                <div class="item">
+                <!-- <div class="item">
                     <div class="img-fill"> 
                         <img src="{{ asset('images/banners/blue_dress.jpg') }}" alt=""> 
                         <div class="info">
                             <div class="text-anim">
-                                <span>M</span><span>a</span><span>t</span><span>r</span><span>i</span><span>c</span>
-                                <span>F</span><span>a</span><span>r</span><span>e</span><span>w</span><span>ell</span><span>&nbsp;|&nbsp;</span>
-                                <span>Graduation</span>
-                                <span>Ceremonies</span><span>&nbsp;|&nbsp;</span>
+                                <span>M</span><span>a</span><span>t</span><span>ric</span>
+                                <span>F</span><span>ar</span><span>ewell</span><span>&nbsp;|&nbsp;</span>
+                                <span>G</span><span>r</span><span>a</span><span>d</span><span>u</span><span>a</span><span>tion</span>
+                                <span>C</span><span>e</span><span>rem</span><span>o</span><span>nies</span>
                             </div>
                         </div> 
                     </div> 
-                </div> 
+                </div>  -->
                 <!-- // Item -->
                 <!-- Item --> 
-                <div class="item">
+                <!-- <div class="item">
                     <div class="img-fill"> 
                         <img src="{{ asset('images/banners/white_dress.jpg') }}" alt=""> 
                         <div class="info">
                             <div class="text-anim">
-                                <span>Birthday Parties</span><span>&nbsp;|&nbsp;</span>
-                                <span>Wedding Reception</span>
+                                <span>B</span><span>ir</span><span>th</span><span>d</span><span>a</span><span>y</span>
+                                <span>P</span><span>ar</span><span>ti</span><span>es</span><span>&nbsp;|&nbsp;</span>
+                                <span>W</span><span>edd</span><span>ing</span><span></span><span> Re</span><span>cep</span><span>ti</span><span>ons</span>
                             </div>
                         </div> 
                     </div> 
-                </div> 
+                </div>  -->
                 <!-- // Item -->
-            </div>
+            <!-- </div> -->
             
             <!-- Catalogue -->
             <div class="catalogue w-100">

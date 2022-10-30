@@ -2029,6 +2029,136 @@ footer .no-animation {
 	border-radius: 0;
 }
 
+.carousel,
+.item,
+.active {
+    height: 100%;
+}
+.carousel-inner {
+  height: 600px;
+  display: block;
+  background: #000;
+}
+.carousel-inner h2 {
+	width: 50%;
+	margin: 0 auto;
+	font-size: 40px;
+	font-family: initial;
+}
+.carousel-inner p {
+	line-height: 1;
+	padding-bottom: 10px;
+}
+
+.fill {
+    width: 100%;
+    height: inherit;
+    background-position: top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.carousel-indicators {
+    bottom: -30px;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 40px;
+    height: 50px;
+}
+.carousel-control-prev-icon {
+	cursor: pointer;
+    background-image: url("../images/icons/left-arrow.png");
+}
+.carousel-control-next-icon {
+	cursor: pointer;
+    background-image: url("../images/icons/right-arrow.png");
+}
+
+.btn-transparent {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.btn-transparent:hover {
+  background-color: #fff;
+}
+
+.btn-large {
+  padding: 11px 45px;
+  font-size: 18px;
+}
+
+.animated {
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+}
+.carousel-caption p {
+  font-size: 18px;
+}
+
+@-webkit-keyframes fadeInRight {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(100px, 0, 0);
+		transform: translate3d(100px, 0, 0);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+@keyframes fadeInRight {
+  	from {
+		opacity: 0;
+		-webkit-transform: translate3d(100px, 0, 0);
+		transform: translate3d(100px, 0, 0);
+  	}
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+.fadeInRight {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+}
+
+.slideDown, .slideUp {
+	position: relative;
+	opacity:0;
+}
+.slideDown {
+	top: -40px;
+	left: 0;
+	animation: slideDown ease .4s forwards .6s;
+}
+.slideUp {
+	top: 40px;
+	left: 0;
+	animation: slideUp ease .5s forwards 1.2s;
+}
+.carousel-caption {
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+@keyframes slideUp {
+	0% {transform: translateY(0);}
+	100% {transform: translateY(-40px);opacity:1;}
+}
+
+@keyframes slideDown {
+	0% {transform: translateY(0);}
+	100% {transform: translateY(40px);opacity:1;}
+}
+
 @media screen and (max-width: 980px) {
 	.content p br {
 		display: none;
@@ -2075,6 +2205,17 @@ footer .no-animation {
 }
 
 @media screen and (max-width: 480px) {
+	.carousel-inner h2 {
+		width: 100%;
+		font-size: 30px;
+	}
+	.carousel-inner {
+		height: 300px;
+	}
+	.carousel-caption {
+		bottom: 0;
+		padding-top: 20px;
+	}
 	#wrapper {
         margin: 0;
         padding: 0;
