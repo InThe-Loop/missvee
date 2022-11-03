@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="3000">
-                        <div class="fill" style="background-image:url({{ asset('images/banners/man_banner.png') }});"></div>
+                        <div class="fill" style="background-image:url({{ asset('images/banners/man_banner.jpg') }});"></div>
                         <div class="carousel-caption">
                             <h2 class="slideUp">Man's perfection</h2>
                             <p class="animated fadeInRight">"One man's style must not be the rule of another's" - Vanessa NT.SA</p>
