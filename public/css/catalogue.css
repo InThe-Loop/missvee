@@ -549,8 +549,8 @@
     opacity: 0.8;
 }
 .catalogue .product .product-inner figure.hair img {
-    min-height: 250px;
-    max-height: 250px;
+    min-height: 230px;
+    max-height: 230px;
 }
 @media screen and (min-width: 992px){
     .product-imgs{
@@ -587,6 +587,13 @@
 }
 
 @media (max-width: 480px) {
+    .catalogue .product .product-inner figure.hair img {
+        min-height: 140px;
+        max-height: 140px;
+    }
+    .catalogue .product .product-inner figure figcaption {
+        min-height: 90px;
+    }
     .product-info-tabs .nav-tabs {
         margin: 0 auto;
         width: fit-content;

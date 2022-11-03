@@ -22,7 +22,7 @@
                     </p>
                     <p>
                         She's a fashion designer. Her passion for fashion drove her into opening an online
-                        store dealing exclusively with evening wear. She decided to approch a new career
+                        store dealing exclusively with evening wear. She decided to pursue a new career
                         in modelling for big clothing brands and billboard adverts.
                     </p>
                     <p>
@@ -43,7 +43,7 @@
                     <p>
                         <small><em>
                             - "Put God first in everything" - Matthew 6, verse 33<br/>
-                            - "Failure is not the opposite of success, it's part of success."
+                            - "Failure is not the opposite of success, it's part of success." - Anonymous
                         </em></small>
                     </p>
                 </div> 
