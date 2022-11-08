@@ -21,6 +21,7 @@
             @include('partials.privacy')
             @include('partials.terms')
             @include('partials.cookies')
+            @include('partials.blackfriday')
         </div>
 
         <!-- Scripts -->

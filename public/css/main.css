@@ -2230,3 +2230,67 @@ footer .no-animation {
 		font-size: 12pt;
 	}
 }
+
+/*
+* Black friday banner
+*/
+#bfModal .modal-body {
+	height: 70vh;
+	text-align: center;
+	background-color: #00080b;
+}
+#bfModal .modal-body img.blk-fri-banner {
+	height: 95%;
+}
+#bfModal .modal-body .rotate {
+	top: 50%;
+    font-size: 25px;
+    color: #ff0000;
+    position: absolute;
+    animation: 1s scale;
+    font-weight: bolder;
+    transform: rotate(45deg);
+	-webkit-animation: 1s scale;
+    -webkit-transform: rotate(45deg);
+}
+@-webkit-keyframes scale {
+	0% {
+	  transform: scale(0);
+	}
+	50% {
+	  transform: scale(1.5);
+	}
+	75% {
+	  transform: scale(0.9);
+	}
+	100% {
+	  transform: scale(1);
+	}
+}
+@keyframes scale {
+	0% {
+	  transform: scale(0);
+	}
+	50% {
+	  transform: scale(1.5);
+	}
+	75% {
+	  transform: scale(0.9);
+	}
+	100% {
+	  transform: scale(1);
+	}
+}
+#bfModal .modal-footer {
+	display: contents;
+}
+
+@media screen and (max-width: 480px) {
+	#bfModal .modal-body .rotate {
+		font-size: 30px;
+	}
+	#bfModal .modal-body img.blk-fri-banner {
+		width: 95%;
+		height: 90%;
+	}
+}
