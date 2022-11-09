@@ -612,6 +612,12 @@ img.product-details-black-friday {
         min-height: 230px;
         max-height: 230px;
     }
+    .catalogue .product .product-inner figure figcaption {
+        min-height: 110px;
+    }
+    .product-name {
+        font-size: 18px;
+    }
 }
 
 .catalogue .product .product-inner figure img.black-fri {
