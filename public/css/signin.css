@@ -113,25 +113,27 @@ img.social-icon {
 }
 
 @media screen and (max-width: 600px) {
-  .login {
-    height: 750px;
-  }
-  .login_box {
-    height: 700px;
-    display: inline-grid;
-  }
-  .login-left, 
-  .login-right {
-    width: 100%;
-  }
-  .login-right {
-    height: 350px;
-  }
-  .login-left form .social {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  img.social-icon {
-    max-height: 100%;
-  }
+  	.login {
+    	height: 750px;
+  	}
+  	.login_box {
+		height: 700px;
+		display: inline-grid;
+  	}
+	.login-left, 
+	.login-right {
+    	width: 100%;
+	}
+	.login-right {
+    	height: 350px;
+	}
+	.login-left form .social {
+    	width: 100%;
+    	margin-bottom: 15px;
+  	}
+  	img.social-icon {
+		min-width: 103%;
+		max-height: 80px;
+		margin-left: -8px;
+	}
 }
