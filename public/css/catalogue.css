@@ -31,6 +31,10 @@
     text-transform: inherit;
     box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
 }
+button.cart-option {
+    width: 100%;
+    margin-bottom: 10px;
+}
 .catalogue .product {
     z-index: 9;
     width: 25%;
@@ -88,6 +92,7 @@
     padding: 20px 0;
     line-height: 20px;
     text-align: center;
+    min-height: 90px;
 }
 .catalogue .product .product-inner figure .price {
     float: left;
@@ -291,23 +296,28 @@
 	height: 100px;
 }
 .product-name {
+    display: block;
 	font-size: 22px;
 	font-weight: 500;
 	line-height: 22px;
 	margin-bottom: 4px;
 }
-.product-price-discount {
-	font-size: 22px;
-    font-weight: 400;
-    padding: 10px 0;
-    clear: both;
-}
-.product-price-discount span.line-through {
-	text-decoration: line-through;
-    margin-left: 10px;
-    font-size: 14px;
-    vertical-align: middle;
+.line-through {
+    font-size: 13px;
     color: #a5a5a5;
+    margin-left: 10px;
+    display: inline-block;
+	text-decoration: line-through;
+}
+.now-price {
+    font-size: 1rem;
+    color: #ff0000;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+}
+img.product-details-black-friday {
+    max-height: 150px;
 }
 .display-flex {
 	display: flex;
@@ -591,9 +601,6 @@
         min-height: 140px;
         max-height: 140px;
     }
-    .catalogue .product .product-inner figure figcaption {
-        min-height: 90px;
-    }
     .product-info-tabs .nav-tabs {
         margin: 0 auto;
         width: fit-content;
@@ -605,4 +612,12 @@
         min-height: 230px;
         max-height: 230px;
     }
+}
+
+.catalogue .product .product-inner figure img.black-fri {
+    left: 15px;
+    width: 60px;
+    min-height: 50px;
+    max-height: 50px;
+    position: absolute;
 }

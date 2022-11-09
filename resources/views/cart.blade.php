@@ -35,19 +35,19 @@
                                     </select>
                                 </td>
                                 <td class="col w-25">
-                                    <form action="{{ route('cart.destroy', [$item->rowId, 'default']) }}" method="POST" id="delete-item">
+                                    <form action="{{ route('cart.destroy', [$item->rowId, 'default']) }}" method="POST">
                                         @csrf()
                                         @method('DELETE')
+                                        <button type="submit" class="cart-option btn btn-danger btn-sm">
+                                            Remove
+                                        </button>
                                     </form>
-                                    <form action="{{ route('cart.save-later', $item->rowId) }}" method="POST" id="save-later">
+                                    <form action="{{ route('cart.save-later', $item->rowId) }}" method="POST">
                                         @csrf()
+                                        <button type="submit" class="cart-option btn btn-success btn-sm">
+                                            Save for later
+                                        </button>
                                     </form>
-                                    <button type="button" class="cart-option btn btn-danger btn-sm" onclick="document.getElementById('delete-item').submit();">
-                                        Remove
-                                    </button>
-                                    <button type="button" class="cart-option btn btn-success btn-sm" onclick="document.getElementById('save-later').submit();">
-                                        Save for later
-                                    </button>
                                 </td>
                                 <td class="col w-25">R{{ format($item->subtotal) }}</td>
                             </tr>
@@ -75,7 +75,7 @@
                     <h4 class="lead text-dark">No items in the cart <a href="{{ route('welcome') }}">Continue shopping</a></h4>
                 </div>
             @endif
-            <hr>
+            <hr />
             @if (Cart::instance('saveForLater')->count() > 0)
                 <h3 class="lead mt-4 text-dark">{{ Cart::instance('saveForLater')->count() }} @if (Cart::instance('default')->count() === 1)item @else items @endif in your wishlist</h3>
                 <table class="table table-responsive table-striped table-light">
@@ -94,21 +94,27 @@
                                     </a>
                                 </td>
                                 <td class="col w-25">
-                                    <form action="{{ route('cart.destroy', [$item->rowId, 'saveForLater']) }}" method="POST" id="delete-form">
+                                    <form action="{{ route('cart.destroy', [$item->rowId, 'saveForLater']) }}" method="POST">
                                         @csrf()
                                         @method('DELETE')
+                                        <button type="submit" class="cart-option btn btn-danger btn-sm">
+                                            Remove
+                                        </button>
                                     </form>
-                                    <form action="{{ route('cart.add-to-cart', $item->rowId) }}" method="POST" id="add-form">
+                                    <form action="{{ route('cart.add-to-cart', $item->rowId) }}" method="POST">
                                         @csrf()
+                                        <button type="submit" class="cart-option btn btn-success btn-sm">
+                                            Add to cart
+                                        </button>
                                     </form>
-                                    <button class="cart-option btn btn-danger btn-sm" onclick="document.getElementById('delete-form').submit();">
-                                        Remove
-                                    </button>
-                                    <button class="cart-option btn btn-success btn-sm" onclick="document.getElementById('add-form').submit();">
-                                        Add to cart
-                                    </button>
                                 </td>
-                                <td class="col w-25">R{{ format($item->model->price) }}</td>
+                                <td class="col w-25">
+                                    @if($item->model->black_friday_price)
+                                        R{{ format($item->model->black_friday_price) }}
+                                    @else
+                                        R{{ format($item->model->price) }}
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

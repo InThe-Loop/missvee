@@ -37,6 +37,11 @@
                     <div class="col-md-8">
                         <div class="product-dtl">
                             <div class="product-info">
+                                @if($product->black_friday_price === 0)
+                                    @php $price = $product->price @endphp
+                                @else
+                                    @php $price = $product->black_friday_price @endphp
+                                @endif
                                 <div class="product-name">
                                     {{ $product->name }}
                                     <span class="badge badge-success">{{ $stockLevel }}</span>
@@ -56,7 +61,13 @@
                                     </div>
                                     <span>0 Reviews</span>
                                 </div>
-                                <div class="product-price-discount"><span>R{{ format($product->price) }}</span><span class="line-through">R200.00</span></div>
+                                <div class="col p-0">
+                                    @if($product->black_friday_price === 0)
+                                        <span>R{{ format($product->price) }}</span><span class="line-through">R200 (shipping fee discounted)</span>
+                                    @else
+                                        <span class="now-price">R{{ format($product->black_friday_price) }}</span><span class="line-through">was R{{ $product->price }}</span>
+                                    @endif
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12 m-0">
@@ -64,7 +75,7 @@
                                         @csrf()
                                         <input type="hidden" name="id" value="{{ $product->id }}">
                                         <input type="hidden" name="name" value="{{ $product->name }}">
-                                        <input type="hidden" name="price" value="{{ $product->price }}">
+                                        <input type="hidden" name="price" value="{{ $price }}">
                                         <button type="submit" class="btn btn-secondary no-border mt-3 w-100">Add to Cart</button>
                                     </form>
                                 </div>
@@ -105,7 +116,7 @@
                                                 <i class="fa fa-share fb-product-share"
                                                 data-title="{{ $product->name }}"
                                                 data-desc="{{ $product->description }}"
-                                                data-price="{{ $product->price }}"
+                                                data-price="{{ $price }}"
                                                 data-slug="{{ $product->slug }}"></i>
                                             </div>
                                         </div>
@@ -114,6 +125,14 @@
                                                 <label for="size">Model size (<span>{{ $product->model_size }}</span>)</label>
                                             </div>
                                         </div>
+                                        @if($product->black_friday_price !== 0)
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <label for="size">Black Friday Deal (Special ends 30 November 2022)</label>
+                                                    <img class="product-details-black-friday" src="{{ asset('images/icons/black_fri.jpg') }}" alt="Black Friday Deal" />
+                                                </div>
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">

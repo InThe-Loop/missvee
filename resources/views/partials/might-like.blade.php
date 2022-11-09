@@ -7,16 +7,29 @@
             <!-- start products row -->
             <div class="row">
                 @foreach ($mightLike as $product)
+                    @if($product->black_friday_price === 0)
+                        @php $price = $product->price @endphp
+                    @else
+                        @php $price = $product->black_friday_price @endphp
+                    @endif
                     <!-- start single product -->
-                    <div class="product" data-fabric="" data-model="" data-type="" data-price="">
+                    <div class="product">
                         <div class="product-inner">
                             <figure>
                                 <a href="{{ route('shop.show', $product->slug) }}">
                                     <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}">
                                 </a>
+                                @if($product->black_friday_price > 0)
+                                    <img src="{{ asset('images/icons/black_fri.jpg') }}" class="black-fri" alt="Black Friday Deal" />
+                                @endif
                                 <figcaption>
-                                    {{ $product->name }}
-                                    <span class="price">R{{ format($product->price) }}</span>
+                                    <span class="product-name">{{ $product->name }}</span>
+                                    @if($product->black_friday_price === 0)
+                                        <span class="price">R{{ format($product->price) }}</span>
+                                    @else
+                                        <span class="now-price">R{{ format($product->black_friday_price) }}</span>
+                                        <span class="line-through">was R{{ format($product->price) }}</span>
+                                    @endif
                                 </figcaption>
                             </figure>
                             <div class="product-actions text-center">
@@ -25,12 +38,12 @@
                                         @csrf()
                                         <input type="hidden" name="id" value="{{ $product->id }}">
                                         <input type="hidden" name="name" value="{{ $product->name }}">
-                                        <input type="hidden" name="price" value="{{ $product->price }}">
+                                        <input type="hidden" name="price" value="{{ $price }}">
                                         <button title="Add item to cart" type="submit" class="fas fa-cart-plus btn btn-secondary"></button>
                                         <button title="Share on Facebook" type="button" class="fa fa-share btn btn-secondary fb-product-share"
                                         data-title="{{ $product->name }}"
                                         data-desc="{{ $product->description }}"
-                                        data-price="{{ $product->price }}"
+                                        data-price="{{ $price }}"
                                         data-slug="{{ $product->slug }}"></button>
                                     </form>
                                 @endif

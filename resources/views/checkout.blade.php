@@ -149,7 +149,12 @@
                             <td class="w-75 align-top">
                                 <h3 class="lead text-dark">{{ $item->model->name }}</h3>
                                 <p class="text-dark">{{ $item->model->details }}</p>
-                                <h3 class="text-dark lead text-small">R{{ format($item->model->price) }}</h3>
+                                @if($item->model->black_friday_price === 0)
+                                    @php $price = $item->model->price @endphp
+                                @else
+                                    @php $price = $item->model->black_friday_price @endphp
+                                @endif
+                                <h3 class="text-dark lead text-small">R{{ format($price) }}</h3>
                             </td>
                             <td>
                                 <span class="quantity-square">{{ $item->qty }}</span>
