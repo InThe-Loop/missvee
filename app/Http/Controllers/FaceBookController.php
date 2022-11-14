@@ -31,7 +31,9 @@ class FaceBookController extends Controller {
             );
             
             Auth::loginUsingId($saveUser->id);
-            return redirect()->route('welcome')->with('success', 'Welcome ' . $user->getName() . '. You have been successfully logged in. Please browse our product offerings below.');
+            // redirect the user to home page, the anchor # is 
+            // to overwrite #_=_ anchor added by facebook
+            return redirect('/#')->with('success', 'Welcome ' . $user->getName() . '. You have been successfully logged in. Please continue to browse our catalogue below.');
         }
         catch (\Throwable $th) {
             throw $th;

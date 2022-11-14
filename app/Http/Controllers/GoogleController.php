@@ -41,7 +41,7 @@ class GoogleController extends Controller {
             }
 
             Auth::loginUsingId($saveUser->id);
-            return redirect()->route('welcome')->with('success', 'Welcome ' . $user->getName() . '. You have been successfully logged in. Please browse our product offerings below.');
+            return redirect('/')->with('success', 'Welcome ' . $user->getName() . '. You have been successfully logged in. Please continue to browse our catalogue below.');
         }
         catch (\Throwable $th) {
             throw $th;
