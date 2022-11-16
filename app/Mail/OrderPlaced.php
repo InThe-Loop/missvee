@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use Config;
 use App\Order;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
@@ -28,6 +29,7 @@ class OrderPlaced extends Mailable
      * @return $this
      */
     public function build() {
-        return $this->markdown('emails.orders.placed');
+        return $this->from(Config::get('app.payments.from_address'), Config::get('app.payments.from_name'))
+            ->markdown('emails.orders.placed');
     }
 }

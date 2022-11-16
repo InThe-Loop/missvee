@@ -116,7 +116,7 @@ class CheckoutController extends Controller {
         if (strtolower($status) === "successful") {
             $this->decreaseQuantities();
             Mail::to($order->billing_email, $order->billing_name)
-                ->bcc(Config::get('app.payments_bcc.address'), Config::get('app.payments_bcc.name'))
+                ->bcc(Config::get('app.payments.bcc_address'), Config::get('app.payments.bcc_name'))
                 ->send(new OrderPlaced($order));
             
             Cart::instance('default')->destroy();

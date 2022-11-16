@@ -30,9 +30,11 @@ return [
         'secret_key' => env('YOCO_SECRET_KEY'),
     ],
 
-    'payments_bcc' => [
-        'address' => env('MAIL_BCC_ADDRESS'),
-        'name' => env('MAIL_BCC_NAME'),
+    'payments' => [
+        'from_address' => env('PAYMENT_FROM_ADDRESS'),
+        'from_name' => env('PAYMENT_FROM_NAME'),
+        'bcc_address' => env('PAYMENT_BCC_ADDRESS'),
+        'bcc_name' => env('PAYMENT_BCC_NAME'),
     ],
 
     /*
