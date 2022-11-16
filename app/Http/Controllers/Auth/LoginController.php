@@ -6,6 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Http\Controllers\Auth\Request;
 
 class LoginController extends Controller
 {
@@ -87,11 +88,16 @@ class LoginController extends Controller
                 $provider . '_id' => $providerUser->getId(),
             ]);
         }
-
         auth()->login($user, true);
-
         return redirect($this->redirectTo);
-
-        // $user->token;
     }
+
+    public function authenticated($user)
+    {
+        if($user->verified == false) {
+            \Auth::logout();
+            return redirect('/login')->withErrors(['msg' => 'You need to verify your account first. We have sent you a verification link, please check your email.']);
+        }
+    }
+
 }

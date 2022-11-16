@@ -38,7 +38,12 @@
                     </div>
 
                     <div class="form-group row">
-                        <div class="col-md-12">
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-secondary no-border">
+                                {{ __('Sign in') }}
+                            </button>
+                        </div>
+                        <div class="col-md-10">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} />
                                 <label class="form-check-label col-form-label text-dark" for="remember">
@@ -46,13 +51,22 @@
                                 </label>
                             </div>
                         </div>
+                        <div class="col-md-12">
+                            @if (Route::has('password.request'))
+                                <a class="link" href="{{ route('password.request') }}">
+                                    {{ __('Forgot your password?') }}
+                                </a>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <label class="form-check-label">Don't have an account yet? You can <a href="{{ route('register') }}">sign up here</a> or just login with your socials below.</label>
+                        </div>
                     </div>
 
                     <div class="form-group row">
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-secondary no-border">
-                                {{ __('Sign in') }}
-                            </button>
                             @if (str_replace(url('/'), '', url()->previous()) == '/cart')
                                 <a href="{{ route('checkout.guest'  ) }}" class="btn btn-warning no-border mr-1">
                                     Guest checkout
@@ -64,13 +78,6 @@
                             <a href="{{ route('google.login') }}">
                                 <img src="{{ asset('images/icons/google-icon.png') }}" class="social-icon" alt="Login with Google" />
                             </a>
-                        </div>
-                        <div class="col-md-12">
-                            @if (Route::has('password.request'))
-                                <a class="link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot your password?') }}
-                                </a>
-                            @endif
                         </div>
                     </div>
                 </form>

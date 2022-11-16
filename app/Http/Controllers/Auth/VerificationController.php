@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Verified;
+use Illuminate\Auth\Access\AuthorizationException;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 
@@ -34,8 +38,23 @@ class VerificationController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
         $this->middleware('signed')->only('verify');
         $this->middleware('throttle:6,1')->only('verify', 'resend');
+    }
+
+    public function verify(Request $request)
+    {
+        $user = \App\User::find($request->route('id'));
+        auth()->login($user);
+        if ($request->user()->hasVerifiedEmail()) {
+            return redirect($this->redirectPath())
+                ->with('success', 'Your account has already been verified. You may continue browsing our catalogue below.');
+        }
+        if ($request->user()->markEmailAsVerified()) {
+            event(new Verified($request->user()));
+        }
+        return redirect($this->redirectPath())->with('verified', true)
+            ->with('success', 'You have been successfully logged in and your account verified. You may continue browsing our catalogue below.');
     }
 }

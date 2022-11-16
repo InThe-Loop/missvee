@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'payments@missveefamouslook.store'),
-        'name' => env('MAIL_FROM_NAME', 'MissVee Payments'),
+        'address' => env('MAIL_FROM_ADDRESS', 'no-reply@missveefamouslook.store'),
+        'name' => env('MAIL_FROM_NAME', 'No-Reply'),
     ],
 
     /*

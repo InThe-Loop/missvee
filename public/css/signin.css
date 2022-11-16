@@ -25,6 +25,7 @@
   
 }
 .login-left input[type="checkbox"] + label:before {
+  border-radius: 0;
   border: solid 1px #0004;
 }
 .login-left a.link {
@@ -103,6 +104,10 @@ img.social-icon {
   margin: 0;
   max-height: 40px;
   vertical-align: middle;
+}
+button.no-border {
+  box-shadow: none;
+  border-color: transparent;
 }
 
 @media screen and (max-width: 768px) {

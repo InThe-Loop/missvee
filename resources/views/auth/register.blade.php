@@ -53,10 +53,13 @@
                     </div>
 
                     <div class="form-group row mt-3 mb-0">
-                        <div class="col-md-12">
+                        <div class="col-md-2">
                             <button type="submit" class="btn btn-secondary no-border">
                                 {{ __('Sign up') }}
                             </button>
+                        </div>
+                        <div class="col-md-10 pt-2">
+                            <label class="form-check-label">Already registered? Please <a href="{{ route('login') }}">sign in here</a>.</label>
                         </div>
                     </div>
                 </form>
