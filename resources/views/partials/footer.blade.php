@@ -40,7 +40,7 @@
                         <a href="https://wa.me/27681037459" class="no-animation" target="_blank"><i class="fab fa-whatsapp"></i></a> |
                         <a href="https://web.facebook.com/miss.vee.famous.look/" class="no-animation" target="_blank"><i class="fab fa-facebook-f"></i></a> | 
                         <a href="https://www.instagram.com/missvee.online/" class="no-animation" target="_blank"><i class="fab fa-instagram"></i></a> | 
-                        <a href="https://www.tiktok.com/@missveepty_ltd?is_from_webapp=1&sender_device=pc" class="no-animation" target="_blank"><i class="fab fa-tiktok"></i></a> | 
+                        <a href="https://www.tiktok.com/@vanessant.sa" class="no-animation" target="_blank"><i class="fab fa-tiktok"></i></a> | 
                         <a href="https://www.youtube.com/channel/UChgq9B81nHI4DPfxiPvSjpg" class="no-animation" target="_blank"><i class="fab fa-youtube"></i></a>
                     </p>
                 </div>
