@@ -6,6 +6,7 @@
         <div class="list hide">
             <a href="{{ route('welcome') }}">Home</a>
             <a href="{{ route('about') }}">About</a>
+            <a href="{{ route('hire.index') }}">Hire</a>
             <a href="{{ route('contact') }}">Contact us</a>
             @guest
                 @if (Route::has('register'))
@@ -74,6 +75,7 @@
                 <hr />
                 <li><a href="{{ route('welcome') }}">Home</a></li>
                 <li><a href="{{ route('about') }}">About</a></li>
+                <li><a href="{{ route('hire.index') }}">Hire</a></li>
                 <li><a href="{{ route('contact') }}">Contact us</a></li>
                 <li>
                 @guest

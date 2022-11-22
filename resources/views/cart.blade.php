@@ -14,43 +14,45 @@
                 <table class="table table-responsive table-striped table-light">
                     <tbody>
                         @foreach (Cart::instance('default')->content() as $item)
-                            <tr>
-                                <td>
-                                    <a href="{{ route('shop.show', $item->model->slug) }}">
-                                        <img src="{{ productImage($item->model->image) }}" class="cart-image" alt="{{ $item->model->name }}" />
-                                    </a>
-                                </td>
-                                <td class="col w-50">
-                                    <a href="{{ route('shop.show', $item->model->slug) }}" class="text-decoration-none">
-                                        <h3 class="lead text-dark">{{ $item->model->name }}</h3>
-                                        <p class="light-text">{{ $item->model->details }}</p>
-                                    </a>
-                                </td>
-                                <td class="col w-20">
-                                    <select class="quantity form-control" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}">
-                                        <option>Select quantity</option>
-                                        @for ($i = 1; $i < 6; $i++)
-                                            <option class="option" value="{{ $i }}" {{ $item->qty == $i ? 'selected' : '' }}>{{ $i }}</option>
-                                        @endfor
-                                    </select>
-                                </td>
-                                <td class="col w-25">
-                                    <form action="{{ route('cart.destroy', [$item->rowId, 'default']) }}" method="POST">
-                                        @csrf()
-                                        @method('DELETE')
-                                        <button type="submit" class="cart-option btn btn-danger btn-sm">
-                                            Remove
-                                        </button>
-                                    </form>
-                                    <form action="{{ route('cart.save-later', $item->rowId) }}" method="POST">
-                                        @csrf()
-                                        <button type="submit" class="cart-option btn btn-success btn-sm">
-                                            Save for later
-                                        </button>
-                                    </form>
-                                </td>
-                                <td class="col w-25">R{{ format($item->subtotal) }}</td>
-                            </tr>
+                            @if($item->model)
+                                <tr>
+                                    <td>
+                                        <a href="{{ route('shop.show', $item->model->slug) }}">
+                                            <img src="{{ productImage($item->model->image) }}" class="cart-image" alt="{{ $item->model->name }}" />
+                                        </a>
+                                    </td>
+                                    <td class="col w-50">
+                                        <a href="{{ route('shop.show', $item->model->slug) }}" class="text-decoration-none">
+                                            <h3 class="lead text-dark">{{ $item->model->name }}</h3>
+                                            <p class="light-text">{{ $item->model->details }}</p>
+                                        </a>
+                                    </td>
+                                    <td class="col w-20">
+                                        <select class="quantity form-control" data-id="{{ $item->rowId }}" data-productQuantity="{{ $item->model->quantity }}">
+                                            <option>Select quantity</option>
+                                            @for ($i = 1; $i < 6; $i++)
+                                                <option class="option" value="{{ $i }}" {{ $item->qty == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                            @endfor
+                                        </select>
+                                    </td>
+                                    <td class="col w-25">
+                                        <form action="{{ route('cart.destroy', [$item->rowId, 'default']) }}" method="POST">
+                                            @csrf()
+                                            @method('DELETE')
+                                            <button type="submit" class="cart-option btn btn-danger btn-sm">
+                                                Remove
+                                            </button>
+                                        </form>
+                                        <form action="{{ route('cart.save-later', $item->rowId) }}" method="POST">
+                                            @csrf()
+                                            <button type="submit" class="cart-option btn btn-success btn-sm">
+                                                Save for later
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td class="col w-25">R{{ format($item->subtotal) }}</td>
+                                </tr>
+                            @endif
                         @endforeach
                     </tbody>
                 </table>

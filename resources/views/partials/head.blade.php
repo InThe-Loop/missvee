@@ -6,7 +6,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'MissVee') }}&trade; | @yield('title')</title>
+    <title>{{ config('app.name') }} | @yield('title')</title>
 
     <link rel="icon" href="{{ asset('favicon.png') }}" type="image/png" />
 
@@ -19,9 +19,6 @@
     <link rel="stylesheet" href="{{ asset('jquery-datetimepicker/jquery.datetimepicker.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('owl.carousel/css/owl.carousel.min.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('owl.carousel/css/owl.theme.default.css') }}" type="text/css" />
-    <!-- <link rel="stylesheet" href="{{ asset('slick/slick.css') }}" type="text/css" /> -->
-    <!-- <link rel="stylesheet" href="{{ asset('slick/slick.theme.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('slick/modern.slider.css') }}" type="text/css" /> -->
     <link rel="stylesheet" href="{{ asset('css/main.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/signin.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/catalogue.css') }}" type="text/css" />

@@ -2284,7 +2284,9 @@ footer .no-animation {
 #bfModal .modal-footer {
 	display: contents;
 }
-
+.zindex-highest {
+	z-index: 99999;
+}
 @media screen and (max-width: 480px) {
 	#bfModal .modal-body .rotate {
 		font-size: 30px;

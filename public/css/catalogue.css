@@ -627,3 +627,57 @@ img.product-details-black-friday {
     max-height: 50px;
     position: absolute;
 }
+.filter-ul {
+    padding: 0;
+    background-color: #6c757d;
+}
+.filter-ul li {
+    padding-left: 0;
+}
+.filter-ul li {
+    border-bottom: 1px solid #fff;
+}
+.filter-ul li a {
+    color: #fff;
+}
+.active-cat {
+    border-left: none;
+    background-color: #000;
+}
+.sorter img {
+    width: 25px;
+    max-width: 0 25px;
+}
+.sorter .active-sort {
+    border: 0;
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+    border-bottom: solid 2px green;
+}
+
+.card {
+    border-radius: 0;
+}
+.card-body h5 {
+    display: block;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 22px;
+    margin-bottom: 4px;
+    text-transform: none;
+    letter-spacing: normal;
+}
+.hire-actions {
+    right: 20px;
+    bottom: 20px;
+    position: absolute;
+    font-size: xx-large;
+}
+.hire-actions .fa.yes {
+    color: green;
+}
+
+.hire-actions .fa.no {
+    color: red;
+}

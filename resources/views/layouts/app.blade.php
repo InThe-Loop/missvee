@@ -17,6 +17,8 @@
             </div>
             
             @include('partials.footer')
+            @include('partials.sizes')
+            @include('partials.forhire')
             @include('partials.returns')
             @include('partials.privacy')
             @include('partials.terms')

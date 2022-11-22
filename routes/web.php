@@ -32,8 +32,10 @@ Route::get('/policies/{page}', 'PoliciesController@index')->name('policies');
 Route::get('/contact', 'ContactController@index')->name('contact');
 Route::post('/contact/send', 'ContactController@sendContactEmail')->name('sendmail');
 
+// For hire
+Route::get('/hire', 'HireController@index')->name('hire.index');
+
 // Shop links
-Route::get('/shop', 'ShopController@index')->name('shop.index');
 Route::get('/shop/{product}', 'ShopController@show')->name('shop.show');
 Route::get('/shop/search/{query}', 'ShopController@search')->name('shop.search');
 
