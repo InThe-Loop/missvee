@@ -1,12 +1,12 @@
 <header id="header">
     <!-- Top menu -->
     <div id="topNav">
-        <span class="top-menu" id="plus">+</span>
-        <span class="top-menu hide" id="minus">-</span>
-        <div class="list hide">
+        <span class="top-menu hide" id="plus">+</span>
+        <span class="top-menu" id="minus">-</span>
+        <div class="list">
             <a href="{{ route('welcome') }}">Home</a>
             <a href="{{ route('about') }}">About</a>
-            <a href="{{ route('hire') }}">Hire</a>
+            <a href="{{ route('hire') }}">For hire</a>
             <a href="{{ route('contact') }}">Contact us</a>
             @guest
                 @if (Route::has('register'))
@@ -75,7 +75,7 @@
                 <hr />
                 <li><a href="{{ route('welcome') }}">Home</a></li>
                 <li><a href="{{ route('about') }}">About</a></li>
-                <li><a href="{{ route('hire') }}">Hire</a></li>
+                <li><a href="{{ route('hire') }}">Fore hire</a></li>
                 <li><a href="{{ route('contact') }}">Contact us</a></li>
                 <li>
                 @guest
