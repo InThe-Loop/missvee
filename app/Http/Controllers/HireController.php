@@ -20,6 +20,16 @@ class HireController extends Controller
     }
 
     /**
+     * Fetches customer details
+     * 
+     * @return \Illuminate\Http\Response
+     */
+    public function fetchItem($id) {
+        $user = Hire::find($id);
+        return response()->json($user);
+    }
+
+    /**
      * Sends a booking email
      *
      * @return \Illuminate\Http\Response

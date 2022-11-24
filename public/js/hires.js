@@ -3,6 +3,47 @@ $(function() {
     // $(".close-modal").on("click", function() {
     //     $("#hireModal").modal("hide");
     // });
+    $("body").on("click", '[data-toggle="modal"]', function() {
+        let id = $(this).data('id');
+        $.ajax({
+            url: "/reservations/fetch/" + id,
+            method: "GET",
+            dataType: "json",
+            success: function(response) {
+                // console.log(response);
+                $("#product-name").text(response.name);
+                $("#product-price").text("R" + response.price);
+                $("#product-sizes").text(response.sizes);
+                $("#hire-name").val(response.name);
+                $("#hire-price").val(response.price);
+                $("#hire-deposit").text(parseInt(response.price) * 2);
+                $("#hire-total").text(response.price);
+                $("#product-desc").html(response.description);
+                let whatsapp = "https://wa.me/0681037459?text=I would like to make a booking for: " + response.name + " at R" + (response.price * 2);
+                $("#whatsapp").attr("href", whatsapp);
+
+                // console.log(JSON.parse(response.images));
+                let images = "", thumbs = "";
+                let link = window.location.href
+                let parts = link.split("/");
+                let url = parts[0] + "//" + parts[2];
+                $.each(JSON.parse(response.images), function( index, value ) {
+                    images += '<img src="' + url + '\\storage\\' + value + '" alt="' + response.name + '" />';
+                    thumbs += '<div class="img-item">\
+                        <a href="#" data-id="' + (index + 1) + '">\
+                            <img src="' + url + '\\storage\\' + value + '" alt="' + response.name + '" />\
+                        </a>\
+                    </div>';
+                });
+                $("#img-showcase").html(images);
+                $("#img-select").html(thumbs);
+            },
+            error: function(xhr) {
+                console.log(xhr)
+            }
+        });
+    });
+
     $('[data-toggle="tooltip"]').tooltip();
 
     let start = moment().add(1, 'days');
@@ -86,7 +127,7 @@ $(function() {
             $(".stage").show();
             $("#make-reservation").text("Making reservation. Please wait...");
             $.ajax({
-                url: "/make-reservation",
+                url: "/reservations/place",
                 method: "POST",
                 dataType: "json",
                 data: {
@@ -102,8 +143,7 @@ $(function() {
                     days: $("#hire-days").val()
                 },
                 success: function(response) {
-                    console.log(response);
-
+                    // console.log(response);
                     $(".stage").hide();
                     $("#make-reservation").text("Reserve item now");
                     if (response[0] == "success") {

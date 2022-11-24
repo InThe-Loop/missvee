@@ -28,10 +28,9 @@
                 <li><a class="active-cat">Yes</a></li>
                 <li><a>No</a></li>
             </ul>
-        </div>
-        <!-- end filter section -->
-        <!-- start products section -->
-        <div class="col-md-10 mt-3">
+            <h4 class="text-dark">
+                Sort
+            </h4>
             <div class="head row">
                 <div class="col-md-12 text-center">
                     <span class="sorter">
@@ -46,12 +45,16 @@
                     </span>
                 </div>
             </div>
+        </div>
+        <!-- end filter section -->
+        <!-- start products section -->
+        <div class="col-md-10 mt-3">
             <!-- start products row -->
             <div class="row">
                 @foreach ($products as $product)
                     <!-- start single product -->
                     <div class="col-md-6 col-sm-12 col-lg-4 product">
-                        <a href="#" data-toggle="modal" data-target="#hireModal" class="custom-card">
+                        <a href="#" data-id="{{ $product->id }}" data-toggle="modal" data-target="#hireModal" class="custom-card">
                             <div class="card view overlay zoom">
                                 <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}" height="200px" width="200px">
                                 <div class="card-body">

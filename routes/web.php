@@ -34,7 +34,8 @@ Route::post('/contact/send', 'ContactController@sendContactEmail')->name('sendma
 
 // For hire
 Route::get('/hire', 'HireController@index')->name('hire');
-Route::post('/make-reservation', 'HireController@reservation')->name('reserve');
+Route::post('/reservations/place', 'HireController@reservation')->name('reserve');
+Route::get('/reservations/fetch/{id}', 'HireController@fetchItem')->name('fetch');
 
 // Shop links
 Route::get('/shop/{product}', 'ShopController@show')->name('shop.show');
