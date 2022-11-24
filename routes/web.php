@@ -33,7 +33,8 @@ Route::get('/contact', 'ContactController@index')->name('contact');
 Route::post('/contact/send', 'ContactController@sendContactEmail')->name('sendmail');
 
 // For hire
-Route::get('/hire', 'HireController@index')->name('hire.index');
+Route::get('/hire', 'HireController@index')->name('hire');
+Route::post('/make-reservation', 'HireController@reservation')->name('reserve');
 
 // Shop links
 Route::get('/shop/{product}', 'ShopController@show')->name('shop.show');

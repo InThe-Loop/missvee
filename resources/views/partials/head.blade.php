@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('jquery-ui/jquery-ui.min.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('jquery-datetimepicker/jquery.datetimepicker.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('jquery-daterangepicker/daterangepicker.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('owl.carousel/css/owl.carousel.min.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('owl.carousel/css/owl.theme.default.css') }}" type="text/css" />
     <link rel="stylesheet" href="{{ asset('css/main.css') }}" type="text/css" />

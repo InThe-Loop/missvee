@@ -60,9 +60,9 @@
                                     <span class="sizes">Sizes: {{ $product->sizes }}</span>
                                     <div class="hire-actions">
                                         @if($product->available === 1)
-                                            <i class="fa fa-check yes"></i>
+                                            <button class="btn btn-success no-border">Hire</button>
                                         @else
-                                            <i class="fa fa-cross no"></i>
+                                            <i class="fa fa-times no"></i>
                                         @endif
                                     </div>
                                 </div>

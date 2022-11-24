@@ -383,7 +383,7 @@ img.product-details-black-friday {
 	font-size: 15px;
 }
 .product-dtl label {
-	line-height: 6px;
+	line-height: 10px;
 	font-size: 15px;
 }
 .form-control:focus {
@@ -445,7 +445,7 @@ img.product-details-black-friday {
 	margin-top: 25px; 
 }
 .product-info-tabs .nav-tabs {
-    margin: 0 15px;
+    margin: 0;
 	border-bottom: 0;
 }
 .product-info-tabs .nav-tabs .nav-item {
@@ -456,6 +456,7 @@ img.product-details-black-friday {
 	border: none; 
     font-size: 30px;
 	color: #323232;
+    background-color: transparent;
 	border-bottom: 2px solid transparent;
 }
 .product-info-tabs .nav-tabs .nav-item .nav-link:hover {
@@ -487,12 +488,13 @@ img.product-details-black-friday {
 	display: inline-block;
 }
 .review-heading {
+    color: #000;
 	font-size: 24px;
     font-weight: 600;
     line-height: 24px;
     margin-bottom: 6px;
     text-transform: uppercase;
-    color: #000;
+    border-bottom: 1px solid #dee2e6;
 }
 .review-form .form-control {
 	font-size: 14px;
@@ -642,7 +644,7 @@ img.product-details-black-friday {
 }
 .active-cat {
     border-left: none;
-    background-color: #000;
+    background-color: #343a40;
 }
 .sorter img {
     width: 25px;
@@ -680,4 +682,95 @@ img.product-details-black-friday {
 
 .hire-actions .fa.no {
     color: red;
+}
+.daterangepicker {
+    border-radius: 0px;
+    width: fit-content;
+}
+.daterangepicker .calendar-table table th {
+    color: #000;
+}
+.daterangepicker .calendar-table th,
+.daterangepicker .calendar-table td {
+    line-height: 15px;
+}
+.daterangepicker .drp-buttons .btn {
+    text-transform: capitalize;
+    letter-spacing: normal;
+    padding: 0 20px;
+    height: 35px;
+    border: 0;
+}
+.cancelBtn.btn {
+    background-color: red;
+}
+.total-hire h6 {
+    text-transform: none;
+}
+.proof-address {
+    top: -8px;
+    left: 170px;
+    padding: 5px;
+    color: #fff;
+    font-size: 9px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #222222;
+}
+.product-dtl label.error {
+    font-size: 12px;
+    line-height: 11px;
+    font-weight: normal;
+}
+
+.stage {
+    top: 90%;
+    left: 50%;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: transparent;
+    transform: translate(-50%, -50%);
+}
+.stage .dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3px;
+    height: 3px;
+    background: rgba(26, 159, 183, 0.8);
+    border-radius: 50%;
+    z-index: 3;
+}
+.stage .ping {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0px;
+    height: 0px;
+    box-shadow: inset 0 0 200px rgba(26, 159, 183, 0);
+    border: 1px solid rgba(26, 159, 183, 0);
+    border-radius: 50%;
+    animation: ping 3s ease infinite;
+    z-index: 2;
+}
+
+@keyframes ping {
+    0% {
+      width: 0px;
+      height: 0px;
+      box-shadow: inset 0 0 200px rgba(120, 161, 168, 0.2);
+      border: 1px solid rgba(44, 54, 56, 0.8);
+    }
+    60% {
+      box-shadow: inset 0 0 200px rgba(26, 159, 183, 0);
+      border: 1px solid rgba(26, 159, 183, 0.1);
+    }
+    90% {
+      width: 50vmin;
+      height: 50vmin;
+    }
 }

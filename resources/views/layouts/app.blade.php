@@ -36,18 +36,19 @@
         <script src="{{ asset('jquery-validate/jquery-validate.min.js') }}"></script>
         <script src="{{ asset('jquery-validate/jquery-validate-additional-methods.min.js') }}"></script>
         <script src="{{ asset('jquery-datetimepicker/jquery.datetimepicker.full.min.js') }}"></script>
+        <script src="{{ asset('jquery-daterangepicker/moment.min.js') }}"></script>
+        <script src="{{ asset('jquery-daterangepicker/daterangepicker.js') }}"></script>
         <script src="{{ asset('owl.carousel/js/owl.carousel.min.js') }}"></script>
-        <!-- <script src="{{ asset('slick/slick.min.js') }}"></script>
-        <script src="{{ asset('slick/modern.slider.js') }}"></script> -->
         <script src="{{ asset('jquery-cookie/jquery.cookie.min.js') }}"></script>
         <script src="{{ asset('jquery-cookie/cookie-consent.js') }}"></script>
-        <script src="{{ asset('js/moment.js') }}"></script>
+        <script src="{{ asset('jquery-maxlength/jquery.maxlength.min.js') }}"></script>
         <script src="{{ asset('js/util.js') }}"></script>
         <script src="{{ asset('js/main.js') }}"></script>
         <script src="{{ asset('js/signin.js') }}"></script>
         <script src="{{ asset('js/signup.js') }}"></script>
         <script src="{{ asset('js/catalogue.js') }}"></script>
         <script src="{{ asset('js/contact.js') }}"></script>
+        <script src="{{ asset('js/hires.js') }}"></script>
 
         @yield('scripts')
     </body>
