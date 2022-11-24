@@ -32,7 +32,7 @@
                 Sort
             </h4>
             <div class="head row">
-                <div class="col-md-12 text-center">
+                <div class="col-md-12">
                     <span class="sorter">
                         <a href="" class="{{ 'sort' == 'low_high' ? 'active-sort' : '' }}">
                             <img src="{{ asset('images/icons/low-high.png') }}" alt="Low to High" />
