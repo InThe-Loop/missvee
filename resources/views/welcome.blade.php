@@ -122,6 +122,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" id="hair-tab" data-toggle="tab" href="#hair" role="tab" aria-controls="hair" aria-selected="false">Hair</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="hire-tab" data-toggle="tab" href="#hire" role="tab" aria-controls="hire" aria-selected="false">Hire</a>
+                            </li>
                         </ul>
                         <div class="row">
                             <div class="col-md-12 mt-5" id="search">
@@ -343,6 +346,35 @@
                                         @else
                                             <p class="text-center text-dark">Sorry, there are no products in stock yet!</p>
                                         @endif
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade show" id="hire" role="tabpanel" aria-labelledby="hire-tab">
+                                <div class="row">
+                                    <div class="col mt-3" id="hire-products">
+                                        @foreach ($hires as $product)
+                                            <!-- start single product -->
+                                            <div class="col-md-4 col-sm-6 product m-2">
+                                                <a href="#" data-id="{{ $product->id }}" data-toggle="modal" data-target="#hireModal" class="custom-card">
+                                                    <div class="card view overlay zoom p-3">
+                                                        <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}" height="200px" width="200px">
+                                                        <div class="card-body">
+                                                            <h5 class="text-dark">{{ $product->name }}</h5>
+                                                            <span class="price">R{{ format($product->price) }}</span>
+                                                            <span class="sizes">Sizes: {{ $product->sizes }}</span>
+                                                            <div class="hire-actions">
+                                                                @if($product->available === 1)
+                                                                    <button class="btn btn-success no-border">Hire</button>
+                                                                @else
+                                                                    <i class="fa fa-times no"></i>
+                                                                @endif
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <!-- end single product -->
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>

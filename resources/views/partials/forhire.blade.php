@@ -87,8 +87,9 @@
                                         <p>Please produce this booking reference number on your arrival: <strong id="reference"></strong></p>
                                         <p>We've also emailed the details of this reservation to your email address for your reference.</p>
                                         <p>Thank you.</p>
+                                        <p class="close-box">close</p>
                                     </div>
-                                    <a id="whatsapp" href="" class="btn btn-success no-border mt-2 w-100" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> Book on WhatsApp</a>
+                                    <a id="whatsapp" href="" class="btn btn-success no-border p-2 mt-2 mb-3 w-100" target="_blank"><i class="fab fa-whatsapp" aria-hidden="true"></i> Book on WhatsApp</a>
                                     <div class="stage hide">
                                         <div class="dot"></div>
                                         <div class="ping"></div>

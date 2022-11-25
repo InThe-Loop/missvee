@@ -129,6 +129,11 @@ button.cart-option {
 .card-img,
 .card-img-top {
     border-radius: 0;
+    min-height: 420px;
+    max-height: 420px;
+}
+.close-box {
+    cursor: pointer;
 }
 /* <select> styles */
 .catalogue select {
@@ -576,6 +581,10 @@ img.product-details-black-friday {
     .catalogue .product {
         width: 33%;
     }
+    .card-img-top {
+        min-height: 350px;
+        max-height: 350px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -595,6 +604,12 @@ img.product-details-black-friday {
     }
     .max-h-550 {
         max-height: 620px;
+    }
+}
+
+@media (max-width: 575px) {
+    .product {
+        width: 50%;
     }
 }
 
@@ -619,6 +634,17 @@ img.product-details-black-friday {
     }
     .product-name {
         font-size: 18px;
+    }
+    .product {
+        width: 50%;
+    }
+    .card-img-top {
+        min-height: 215px;
+        max-height: 215px;
+    }
+    .hire-actions {
+        right: 0 !important;
+        bottom: 60px !important;
     }
 }
 

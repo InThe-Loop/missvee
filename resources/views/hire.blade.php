@@ -53,7 +53,7 @@
             <div class="row">
                 @foreach ($products as $product)
                     <!-- start single product -->
-                    <div class="col-md-6 col-sm-12 col-lg-4 product">
+                    <div class="col-md-4 col-sm-6 product">
                         <a href="#" data-id="{{ $product->id }}" data-toggle="modal" data-target="#hireModal" class="custom-card">
                             <div class="card view overlay zoom">
                                 <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}" height="200px" width="200px">

@@ -16,7 +16,7 @@ $(function() {
                 $("#product-sizes").text(response.sizes);
                 $("#hire-name").val(response.name);
                 $("#hire-price").val(response.price);
-                $("#hire-deposit").text(parseInt(response.price) * 2);
+                $("#hire-deposit").text(parseInt(response.price * 2));
                 $("#hire-total").text(response.price);
                 $("#product-desc").html(response.description);
                 let whatsapp = "https://wa.me/0681037459?text=I would like to make a booking for: " + response.name + " at R" + (response.price * 2);
@@ -44,6 +44,9 @@ $(function() {
         });
     });
 
+    $(".close-box").on("click", function() {
+        $(".success-msg").slideUp();
+    });
     $('[data-toggle="tooltip"]').tooltip();
 
     let start = moment().add(1, 'days');

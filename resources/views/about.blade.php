@@ -31,16 +31,16 @@
                         sales and finances.
                     </p>
                     <p>
-                        She aims to create jobs out of MissVee online store which are; modelling,
-                        photography and beauty technician careers to work with her at her fashion main house.
+                        She aims to create jobs out of MissVee Famous Look, in the fields of marketing management (sales, promotions, advertising positions), modelling,
+                        photography, and beauty to work with her at her fashion main house. There will also be opportunities available in the Information Technology space through
+                        her other business interest, InTheLoop Software Solutions.
                     </p>
                     <p>
-                        Vanessa is also a director at her husband's IT company
-                        (InTheLoop Software Solutions). She also owns a food service company
-                        named MissVee Tropical Salads; published a cooking book and an
-                        autobiograpghy in 2021. Vanessa's favourite quotes: 
+                        She also owns a food service company named MissVee Tropical Salads; she's a published author of a cook book and an
+                        autobiograpghy.
                     </p>
                     <p>
+                        Vanessa lives by these mottos:
                         <small><em>
                             - "Put God first in everything" - Matthew 6, verse 33<br/>
                             - "Failure is not the opposite of success, it's part of success." - Anonymous
