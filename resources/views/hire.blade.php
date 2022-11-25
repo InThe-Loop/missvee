@@ -49,35 +49,39 @@
         <!-- end filter section -->
         <!-- start products section -->
         <div class="col-md-10 mt-3">
-            <!-- start products row -->
-            <div class="row">
-                @foreach ($products as $product)
-                    <!-- start single product -->
-                    <div class="col-md-4 col-sm-6 product">
-                        <a href="#" data-id="{{ $product->id }}" data-toggle="modal" data-target="#hireModal" class="custom-card">
-                            <div class="card view overlay zoom">
-                                <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}" height="200px" width="200px">
-                                <div class="card-body">
-                                    <h5 class="text-dark">{{ $product->name }}</h5>
-                                    <span class="price">R{{ format($product->price) }}</span>
-                                    <span class="sizes">Sizes: {{ $product->sizes }}</span>
-                                    <div class="hire-actions">
-                                        @if($product->available === 1)
-                                            <button class="btn btn-success no-border">Hire</button>
-                                        @else
-                                            <i class="fa fa-times no"></i>
-                                        @endif
+            @if(!empty($products))
+                <!-- start products row -->
+                <div class="row">
+                    @foreach ($products as $product)
+                        <!-- start single product -->
+                        <div class="col-md-4 col-sm-6 product">
+                            <a href="#" data-id="{{ $product->id }}" data-toggle="modal" data-target="#hireModal" class="custom-card">
+                                <div class="card view overlay zoom">
+                                    <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}" height="200px" width="200px">
+                                    <div class="card-body">
+                                        <h5 class="text-dark">{{ $product->name }}</h5>
+                                        <span class="price">R{{ format($product->price) }}</span>
+                                        <span class="sizes">Sizes: {{ $product->sizes }}</span>
+                                        <div class="hire-actions">
+                                            @if($product->available === 1)
+                                                <button class="btn btn-success no-border">Hire</button>
+                                            @else
+                                                <i class="fa fa-times no"></i>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- end single product -->
-                @endforeach
-            </div>
-            <div class="text-center">
-                {{ $products->appends(request()->input())->links() }}
-            </div>
+                            </a>
+                        </div>
+                        <!-- end single product -->
+                    @endforeach
+                </div>
+                <div class="text-center">
+                    {{ $products->appends(request()->input())->links() }}
+                </div>
+            @else
+                <p class="text-center mt-5">There's no stock to hire at the moment.</p>
+            @endif
             <!-- end products row -->
         </div>
         <!-- end products section -->

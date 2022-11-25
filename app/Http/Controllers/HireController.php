@@ -12,8 +12,10 @@ class HireController extends Controller
     public function index() {
         $pagination = 10;
         $hires = Hire::all();
-        $allHires = $hires->random()->paginate($pagination);
-
+        $allHires = null;
+        if (!$hires->isEmpty()) {
+            $allHires = $hires->random()->paginate($pagination);
+        }
         return view('hire')->with([
             'products' => $allHires,
         ]);
