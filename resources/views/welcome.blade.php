@@ -171,7 +171,7 @@
                                             <option value="">Filter by Color</option>
                                             <option value="">Show All</option>
                                             @foreach ($colors as $item)
-                                                <option value="{{ $item->color }}">{{ $item->color }}</option>
+                                                <option value="{{ $item->color }}">{{ ucfirst($item->color) }}</option>
                                             @endforeach
                                         </select>
                                     </div>
