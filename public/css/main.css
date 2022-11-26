@@ -546,6 +546,7 @@ img.icon-loggedin {
 }
 #search-form button {
 	margin: 0;
+	letter-spacing: normal;
 }
 #filter {
 	width: 100%;
@@ -1986,13 +1987,16 @@ a.go-back {
 	color: #000;
 }
 .advanced-filters {
-	padding: 5px;
-	cursor: pointer;
+    padding: 5px;
+    height: 35px;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #343a40;
 }
 .advanced-filters:hover {
-	text-decoration: underline;
-	text-decoration-color: #ccc;
-	text-decoration-thickness: 2px;
+    background-color: #454d55;
+	text-decoration-thickness: 5px;
 }
 .modal-dialog{
     overflow-y: initial !important

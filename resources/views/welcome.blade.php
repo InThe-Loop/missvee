@@ -139,7 +139,7 @@
                                         <input class="form-control" type="text" placeholder="Know what you're looking for?" />
                                     </div>
                                     <div class="form-group w-25 dis-grid">
-                                        <button type="submit" class="btn btn-secondary w-100">Filter</button>
+                                        <button type="submit" class="btn btn-secondary w-100">Search</button>
                                     </div>
                                     <div class="form-group w-25 dis-grid text-center">
                                         <span class="advanced-filters">Advanced filters</span>
@@ -352,29 +352,33 @@
                             <div class="tab-pane fade show" id="hire" role="tabpanel" aria-labelledby="hire-tab">
                                 <div class="row">
                                     <div class="col mt-3" id="hire-products">
-                                        @foreach ($hires as $product)
-                                            <!-- start single product -->
-                                            <div class="col-md-4 col-sm-6 product m-2">
-                                                <a href="#" data-id="{{ $product->id }}" data-toggle="modal" data-target="#hireModal" class="custom-card">
-                                                    <div class="card view overlay zoom p-3">
-                                                        <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}" height="200px" width="200px">
-                                                        <div class="card-body">
-                                                            <h5 class="text-dark">{{ $product->name }}</h5>
-                                                            <span class="price">R{{ format($product->price) }}</span>
-                                                            <span class="sizes">Sizes: {{ $product->sizes }}</span>
-                                                            <div class="hire-actions">
-                                                                @if($product->available === 1)
-                                                                    <button class="btn btn-success no-border">Hire</button>
-                                                                @else
-                                                                    <i class="fa fa-times no"></i>
-                                                                @endif
+                                        @if(count($hires) > 0)
+                                            @foreach ($hires as $product)
+                                                <!-- start single product -->
+                                                <div class="col-md-4 col-sm-6 product m-2">
+                                                    <a href="#" data-id="{{ $product->id }}" data-toggle="modal" data-target="#hireModal" class="custom-card">
+                                                        <div class="card view overlay zoom p-3">
+                                                            <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}" height="200px" width="200px">
+                                                            <div class="card-body">
+                                                                <h5 class="text-dark">{{ $product->name }}</h5>
+                                                                <span class="price">R{{ format($product->price) }}</span>
+                                                                <span class="sizes">Sizes: {{ $product->sizes }}</span>
+                                                                <div class="hire-actions">
+                                                                    @if($product->available === 1)
+                                                                        <button class="btn btn-success no-border">Hire</button>
+                                                                    @else
+                                                                        <i class="fa fa-times no"></i>
+                                                                    @endif
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <!-- end single product -->
-                                        @endforeach
+                                                    </a>
+                                                </div>
+                                                <!-- end single product -->
+                                            @endforeach
+                                        @else
+                                            <p class="text-center text-dark">Sorry, there are no products in stock yet!</p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
