@@ -80,7 +80,7 @@
                     {{ $products->appends(request()->input())->links() }}
                 </div>
             @else
-                <p class="text-center mt-5">There's no garment to hire at the moment.</p>
+                <p class="text-center mt-5">There are no garments to hire at the moment.</p>
             @endif
             <!-- end products row -->
         </div>
