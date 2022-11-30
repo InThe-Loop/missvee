@@ -72,13 +72,13 @@ Auth::routes();
 Auth::routes(['verify' => true]);
 
 // Facebook Login URL
-Route::prefix('login/facebook')->name('facebook.login')->group( function() {
+Route::prefix('login/facebook')->name('facebook.')->group( function() {
     Route::get('auth', [FaceBookController::class, 'loginUsingFacebook'])->name('login');
     Route::get('callback', [FaceBookController::class, 'callbackFromFacebook'])->name('callback');
 });
 
 // Google URL
-Route::prefix('login/google')->name('google.login')->group( function() {
+Route::prefix('login/google')->name('google.')->group( function() {
     Route::get('login', [GoogleController::class, 'loginWithGoogle'])->name('login');
     Route::any('callback', [GoogleController::class, 'callbackFromGoogle'])->name('callback');
 });
