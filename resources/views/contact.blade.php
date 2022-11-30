@@ -15,7 +15,7 @@
                     <div class="form-group row">
                         <div class="col-md-6">
                             <label for="email" class="text-dark">{{ __('Email address') }}</label>
-                            <input id="email" type="email" class="form-control my-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required />
+                            <input id="email" type="email" class="form-control my-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required maxlength="100" />
 
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -42,7 +42,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="name" class="text-dark">{{ __('Full name') }}</label>
-                            <input id="name" type="text" class="form-control my-input @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autofocus>
+                            <input id="name" type="text" class="form-control my-input @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autofocus maxlength="30" />
 
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -52,7 +52,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="phone" class="text-dark">{{ __('Phone number') }}</label>
-                            <input id="phone" type="number" class="form-control my-input @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" />
+                            <input id="phone" type="number" class="form-control my-input @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" maxlength="10" />
 
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -64,7 +64,7 @@
                     <div class="form-group row mt-3">
                         <div class="col-md-12">
                             <label for="message" class="text-start">{{ __('Message') }}</label>
-                            <textarea rows="4" id="message" name="message" class="form-control my-input @error('message') is-invalid @enderror" required></textarea>
+                            <textarea rows="4" id="message" name="message" class="form-control my-input @error('message') is-invalid @enderror" required maxlength="500"></textarea>
                         </div>
                     </div>
 

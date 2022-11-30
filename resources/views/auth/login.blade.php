@@ -14,7 +14,7 @@
                     <div class="form-group row">
                         <div class="col-sm-12">
                             <label for="email" class="text-dark">{{ __('Email address') }}</label>
-                            <input id="email" type="email" class="form-control my-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus />
+                            <input id="email" type="email" class="form-control my-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus maxlength="100" />
 
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -23,12 +23,10 @@
                             @enderror
                         </div>
                     </div>
-
                     <div class="form-group row">
                         <div class="col-sm-12">
                             <label for="password" class="text-dark">{{ __('Password') }}</label>
-                            <input id="password" type="password" class="form-control my-input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" />
-
+                            <input id="password" type="password" class="form-control my-input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" maxlength="12" />
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -36,7 +34,6 @@
                             @enderror
                         </div>
                     </div>
-
                     <div class="form-group row">
                         <div class="col-md-2">
                             <button type="submit" class="btn btn-secondary no-border">
@@ -64,7 +61,6 @@
                             <label class="form-check-label">Don't have an account yet? You can <a href="{{ route('register') }}">sign up here</a> or just login with your socials below.</label>
                         </div>
                     </div>
-
                     <div class="form-group row">
                         <div class="col-md-12">
                             @if (str_replace(url('/'), '', url()->previous()) == '/cart')
@@ -75,8 +71,8 @@
                             <a href="{{ route('facebook.login') }}" class="btn btn-primary social">
                                 <i class="fab fa-facebook fa-fw"></i> Login with Facebook
                             </a>
-                            <a href="{{ route('google.login') }}">
-                                <img src="{{ asset('images/icons/google-icon.png') }}" class="social-icon" alt="Login with Google" />
+                            <a href="{{ route('google.login') }}" class="btn btn-google-signin">
+                                <img src="{{ asset('images/icons/google-icon.png') }}" alt="Sign in with Google" /> <span>Sign in with Google</span>
                             </a>
                         </div>
                     </div>

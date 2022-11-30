@@ -15,7 +15,7 @@
                     <div class="form-group row">
                         <div class="col-md-12">
                             <label for="name" class="text-dark">{{ __('Full name') }}</label>
-                            <input id="name" type="text" class="form-control my-input @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                            <input id="name" type="text" class="form-control my-input @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus maxlength="30" />
 
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -25,7 +25,7 @@
                         </div>
                         <div class="col-md-12">
                             <label for="email" class="text-dark">{{ __('Email address') }}</label>
-                            <input id="email" type="email" class="form-control my-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                            <input id="email" type="email" class="form-control my-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" maxlength="100" />
 
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -38,7 +38,7 @@
                     <div class="form-group row mt-3">
                         <div class="col-md-6">
                             <label for="password" class="text-start">{{ __('Password') }}</label>
-                            <input id="password" type="password" class="form-control my-input @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                            <input id="password" type="password" class="form-control my-input @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" maxlength="12" />
 
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -48,7 +48,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="password_confirmation" class="text-dark">{{ __('Confirm password') }}</label>
-                            <input id="password_confirmation" type="password" class="form-control my-input" name="password_confirmation" required autocomplete="new-password">
+                            <input id="password_confirmation" type="password" class="form-control my-input" name="password_confirmation" required autocomplete="new-password" maxlength="12" />
                         </div>
                     </div>
 

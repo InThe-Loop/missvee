@@ -109,6 +109,23 @@ button.no-border {
   box-shadow: none;
   border-color: transparent;
 }
+.btn-google-signin {
+  padding: 0;
+  color: #fff;
+  display: inline-flex;
+  background-color: #4285f4;
+  border: 1px solid #4285f4 !important;
+}
+.btn-google-signin:hover {
+  color: #fff;
+  background-color: #2f73e0;
+}
+.btn-google-signin img {
+  height: 33px;
+}
+.btn-google-signin span {
+  padding: 6px;
+}
 
 @media screen and (max-width: 768px) {
     button.no-border {
@@ -141,4 +158,7 @@ button.no-border {
 		max-height: 80px;
 		margin-left: -5px;
 	}
+  .btn-google-signin {
+    width: 100%;
+  }
 }

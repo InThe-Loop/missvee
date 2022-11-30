@@ -22,9 +22,9 @@
                         <div class="form-group">
                             <label for="email" class="light-text">Email address</label>
                             @guest
-                                <input type="email" id="email" name="email" class="form-control my-input" required />
+                                <input type="email" id="email" name="email" class="form-control my-input" required maxlength="100" />
                             @else
-                                <input type="email" id="email" name="email" class="form-control my-input" value="{{ auth()->user()->email }}" readonly required />
+                                <input type="email" id="email" name="email" class="form-control my-input" value="{{ auth()->user()->email }}" readonly required maxlength="100" />
                             @endguest
                         </div>
                     </div>
@@ -34,16 +34,16 @@
                         <div class="form-group">
                             <label for="name" class="light-text">Full name</label>
                             @guest
-                                <input type="text" id="name" name="name" class="form-control my-input" required />
+                                <input type="text" id="name" name="name" class="form-control my-input" required maxlength="30" />
                             @else
-                                <input type="text" id="name" name="name" class="form-control my-input" value="{{ auth()->user()->name }}" required />
+                                <input type="text" id="name" name="name" class="form-control my-input" value="{{ auth()->user()->name }}" required maxlength="30" />
                             @endif
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="phone" class="text-dark">Phone</label>
-                            <input type="number" id="phone" name="phone" class="form-control my-input" required />
+                            <input type="number" id="phone" name="phone" class="form-control my-input" required maxlength="10" />
                         </div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                                     <span id="addr-hide" class="show-add-fields hide">-</span>
                                 </div>
                             </label>
-                            <input type="text" class="form-control" id="autocomplete" name="autocomplete" onFocus="geolocate()" placeholder="" required />
+                            <input type="text" class="form-control" id="autocomplete" name="autocomplete" onFocus="geolocate()" placeholder="" required maxlength="255" />
                         </div>
                     </div>
                     <div class="hide col-md-12" id="billing-info">
@@ -64,13 +64,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Street Address</label>
-                                    <input type="text" class="form-control" id="address" name="address" required />
+                                    <input type="text" class="form-control" id="address" name="address" required maxlength="100" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Suburb</label>
-                                    <input type="text" class="form-control" id="suburb" name="city" required />
+                                    <input type="text" class="form-control" id="suburb" name="city" required maxlength="30" />
                                 </div>
                             </div>
                         </div>
@@ -78,13 +78,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Province</label>
-                                    <input type="text" class="form-control" id="region" name="province" required />
+                                    <input type="text" class="form-control" id="region" name="province" required maxlength="50" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Postal Code</label>
-                                    <input type="text" class="form-control" id="postal_code" name="postal_code" required />
+                                    <input type="number" class="form-control" id="postal_code" name="postal_code" required maxlength="6" />
                                 </div>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Country</label>
-                                    <input type="text" class="form-control" id="country" name="Country" />
+                                    <input type="text" class="form-control" id="country" name="Country" maxlength="50" />
                                 </div>
                             </div>
                         </div>
@@ -103,12 +103,12 @@
                         <h3 class="lead text-dark mt-3">Payment details</h3>
                         <div class="form-group">
                             <label>Name on card</label>
-                            <input type="text" class="form-control" id="name_on_card" name="name_on_card" required />
+                            <input type="text" class="form-control" id="name_on_card" name="name_on_card" required maxlength="100" />
                         </div>
 
                         <div class="form-group" id="card-frame">
                         	<!-- Yoco Inline form will be added here -->
-                        	<span class="text-center">Loading card form. Please wait... </span>
+                        	<span class="text-center">Loading credit card form. Please wait... </span>
                         </div>
                         
                         <p class="success-payment-message" />
