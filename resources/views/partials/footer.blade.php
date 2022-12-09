@@ -32,8 +32,8 @@
                 <div class="col-md-3 text-start">
                     <p>
                         <strong>Our offices</strong><br />
-                        199 Uys Rd, <br />
-                        Rynfield,<br />
+                        41 Richmond St, <br />
+                        Crystal Park,<br />
                         Benoni,<br />
                         1501
                         <br /><br />
