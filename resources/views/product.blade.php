@@ -10,6 +10,29 @@
                     <div class="arrow pl-1"> Back</div>
                 </a>
                 <div class="row mb-5">
+                    <div class="col-md-5">
+                        <!-- card left -->
+                        <div class="img-display">
+                            <div class="img-showcase zoom-img">
+                                @if ($images)
+                                    @foreach ($images as $image)
+                                        <img src="{{ productImage($image) }}" alt="{{ $product->name }}" />
+                                    @endforeach
+                                @endif
+                            </div>
+                        </div>
+                        <div class="img-select">
+                            @if ($images)
+                                @foreach ($images as $image)
+                                    <div class="img-item">
+                                        <a href="#" data-id="{{ $loop->iteration }}">
+                                            <img src="{{ productImage($image) }}" alt = "{{ $product->name }}" />
+                                        </a>
+                                    </div>
+                                @endforeach
+                            @endif
+                        </div>
+                    </div>
                     <div class="col-md-7">
                         <h3 class="lead text-dark mt-2">Product Details</h3>
                         <div class="product-dtl">
@@ -156,29 +179,6 @@
                                     </form>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <!-- card left -->
-                        <div class="img-display">
-                            <div class="img-showcase zoom-img">
-                                @if ($images)
-                                    @foreach ($images as $image)
-                                        <img src="{{ productImage($image) }}" alt="{{ $product->name }}" />
-                                    @endforeach
-                                @endif
-                            </div>
-                        </div>
-                        <div class="img-select">
-                            @if ($images)
-                                @foreach ($images as $image)
-                                    <div class="img-item">
-                                        <a href="#" data-id="{{ $loop->iteration }}">
-                                            <img src="{{ productImage($image) }}" alt = "{{ $product->name }}" />
-                                        </a>
-                                    </div>
-                                @endforeach
-                            @endif
                         </div>
                     </div>
                 </div>
