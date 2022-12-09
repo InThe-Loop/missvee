@@ -14,7 +14,6 @@
                     <h3>Save 30% on cart purchases over R5,000</h3>
                 </div>
             </div>
-
             <!-- Carousel Banner -->
             <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
                 <!-- Slides -->
@@ -55,58 +54,6 @@
                     <li data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></li>
                 </ol>
             </div>
-
-            <!-- <div class="Modern-Slider">  -->
-                <!-- Item -->
-                <!-- <div class="item"> 
-                    <div class="img-fill"> 
-                        <img src="{{ asset('images/banners/red_dress.jpg') }}" alt="TV Aparel" /> 
-                        <div class="info">
-                            <div class="text-anim">
-                                <span>T</span><span>V</span>
-                                <span>Apparel</span><span>&nbsp;|&nbsp;</span>
-                                <span>A</span><span>w</span><span>a</span><span>r</span><span>d</span>
-                                <span>Ceremonies</span><span>&nbsp;|&nbsp;</span>
-                                <span>R</span><span>e</span><span>d</span>
-                                <span>Carpet</span><span>&nbsp;|&nbsp;</span>
-                                <span>Corporate</span>
-                                <span>E</span><span>v</span><span>e</span><span>n</span><span>ts</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>  -->
-                <!-- // Item -->
-                <!-- Item --> 
-                <!-- <div class="item">
-                    <div class="img-fill"> 
-                        <img src="{{ asset('images/banners/blue_dress.jpg') }}" alt=""> 
-                        <div class="info">
-                            <div class="text-anim">
-                                <span>M</span><span>a</span><span>t</span><span>ric</span>
-                                <span>F</span><span>ar</span><span>ewell</span><span>&nbsp;|&nbsp;</span>
-                                <span>G</span><span>r</span><span>a</span><span>d</span><span>u</span><span>a</span><span>tion</span>
-                                <span>C</span><span>e</span><span>rem</span><span>o</span><span>nies</span>
-                            </div>
-                        </div> 
-                    </div> 
-                </div>  -->
-                <!-- // Item -->
-                <!-- Item --> 
-                <!-- <div class="item">
-                    <div class="img-fill"> 
-                        <img src="{{ asset('images/banners/white_dress.jpg') }}" alt=""> 
-                        <div class="info">
-                            <div class="text-anim">
-                                <span>B</span><span>ir</span><span>th</span><span>d</span><span>a</span><span>y</span>
-                                <span>P</span><span>ar</span><span>ti</span><span>es</span><span>&nbsp;|&nbsp;</span>
-                                <span>W</span><span>edd</span><span>ing</span><span></span><span> Re</span><span>cep</span><span>ti</span><span>ons</span>
-                            </div>
-                        </div> 
-                    </div> 
-                </div>  -->
-                <!-- // Item -->
-            <!-- </div> -->
-            
             <!-- Catalogue -->
             <div class="catalogue w-100">
                 <!-- Products -->
