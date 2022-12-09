@@ -27,7 +27,7 @@
                     <li>Please include your correct banking details for a refund.</li>
                     <li>You now have 2 options to get the item back to us.</li>
                     <ul>
-                        <li>A. Deliver to <strong>MissVee</strong> Famous Look, 199 Uys Rd, Rynfield, Benoni, 1501.  Please note, this is a working studio, not a shop.</li>
+                        <li>A. Deliver to <strong>MissVee</strong> TMI Group (Pty) Ltd., 41 Richmond St, Crystal Park, Benoni, 1501.  Please note, this is a working studio, not a shop.</li>
                         <li>B. We can arrange a courier to collect your goods. Please include your address and when somebody is available in the email you send. Please note that R100 will be deducted withing Gauteng and R350 anywhere else around the country.</li>
                     </ul>
                 </ul>
