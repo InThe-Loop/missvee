@@ -247,7 +247,7 @@
                                                     <!-- //Single product -->
                                                 @endif
                                             @endforeach
-                                            @if($men > 0)
+                                            @if($men == 0)
                                                 <p class="text-center text-dark">Sorry, there are no men's products in stock yet!</p>
                                             @endif
                                         @else
