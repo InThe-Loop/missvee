@@ -201,7 +201,6 @@
                                             @foreach ($products as $product)
                                                 @if(strtolower($product->category->name) == "men")
                                                     @php $men++ @endphp
-                                                    @php $men = 0 @endphp
                                                     @if($product->black_friday_price === 0)
                                                         @php $price = $product->price @endphp
                                                     @else
