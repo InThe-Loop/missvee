@@ -185,6 +185,8 @@
                                                         </div>
                                                     </div>
                                                     <!-- //Single product -->
+                                                @else
+                                                    <p class="text-center text-dark">Sorry, there are no women's products in stock yet!</p>
                                                 @endif
                                             @endforeach
                                         @else
@@ -243,6 +245,8 @@
                                                         </div>
                                                     </div>
                                                     <!-- //Single product -->
+                                                @else
+                                                    <p class="text-center text-dark">Sorry, there are no men's products in stock yet!</p>
                                                 @endif
                                             @endforeach
                                         @else
@@ -288,6 +292,8 @@
                                                         </div>
                                                     </div>
                                                     <!-- //Single product -->
+                                                @else
+                                                    <p class="text-center text-dark">Sorry, there are no hair products in stock yet!</p>
                                                 @endif
                                             @endforeach
                                         @else
@@ -324,7 +330,7 @@
                                                 <!-- end single product -->
                                             @endforeach
                                         @else
-                                            <p class="text-center text-dark">Sorry, there are no products in stock yet!</p>
+                                            <p class="text-center text-dark">Sorry, there are no products for hire in stock yet!</p>
                                         @endif
                                     </div>
                                 </div>
