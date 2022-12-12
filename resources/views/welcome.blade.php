@@ -185,8 +185,6 @@
                                                         </div>
                                                     </div>
                                                     <!-- //Single product -->
-                                                @else
-                                                    <p class="text-center text-dark">Sorry, there are no women's products in stock yet!</p>
                                                 @endif
                                             @endforeach
                                         @else
@@ -199,8 +197,11 @@
                                 <div class="row">
                                     <div class="col" id="men-products">
                                         @if(count($products) > 0)
+                                            @php $men = 0 @endphp
                                             @foreach ($products as $product)
                                                 @if(strtolower($product->category->name) == "men")
+                                                    @php $men++ @endphp
+                                                    @php $men = 0 @endphp
                                                     @if($product->black_friday_price === 0)
                                                         @php $price = $product->price @endphp
                                                     @else
@@ -245,10 +246,11 @@
                                                         </div>
                                                     </div>
                                                     <!-- //Single product -->
-                                                @else
-                                                    <p class="text-center text-dark">Sorry, there are no men's products in stock yet!</p>
                                                 @endif
                                             @endforeach
+                                            @if($men > 0)
+                                                <p class="text-center text-dark">Sorry, there are no men's products in stock yet!</p>
+                                            @endif
                                         @else
                                             <p class="text-center text-dark">Sorry, there are no products in stock yet!</p>
                                         @endif
@@ -292,8 +294,6 @@
                                                         </div>
                                                     </div>
                                                     <!-- //Single product -->
-                                                @else
-                                                    <p class="text-center text-dark">Sorry, there are no hair products in stock yet!</p>
                                                 @endif
                                             @endforeach
                                         @else
