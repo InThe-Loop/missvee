@@ -32,4 +32,13 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+
+    <!-- Google tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-252441480-1"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-252441480-1');
+    </script>
 </head>
