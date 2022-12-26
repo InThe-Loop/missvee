@@ -22,13 +22,20 @@
                         <div class="fill" style="background-image:url({{ asset('images/banners/blue_dress.jpg') }});"></div>
                         <div class="carousel-caption">
                             <h2 class="slideUp">Exclusive evening wear</h2>
-                            <p class="animated fadeInRight">TV Apparel | Award ceremonies | Corporate events</p>
+                            <p class="animated fadeInRight">TV Apparel | Award ceremonies</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <div class="fill" style="background-image:url({{ asset('images/banners/black_dress.jpg') }});"></div>
+                        <div class="carousel-caption">
+                            <h2 class="slideUp">Grand entrance uniquely</h2>
+                            <p class="animated fadeInRight">Corporate events | Gala events</p>
                         </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="3000">
                         <div class="fill" style="background-image:url({{ asset('images/banners/red_dress.jpg') }});"></div>
                         <div class="carousel-caption">
-                            <h2 class="slideUp">Grand entrance uniquely</h2>
+                            <h2 class="slideUp">Style has no limits</h2>
                             <p class="animated fadeInRight">Matric farewell | Graduation ceremonies</p>
                         </div>
                     </div>
@@ -36,7 +43,7 @@
                         <div class="fill" style="background-image:url({{ asset('images/banners/man_banner.png') }});"></div>
                         <div class="carousel-caption">
                             <h2 class="slideUp">Man's perfection</h2>
-                            <p class="animated fadeInRight">"One man's style must not be the rule of another's" - Vanessa NT.SA</p>
+                            <p class="animated fadeInRight" style="color: #d9d9d9;">"One man's style must not be the rule of another's" - Vanessa N Tsotetsi</p>
                         </div>
                     </div>
                 </div>
@@ -52,6 +59,7 @@
                     <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></li>
                     <li data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></li>
                     <li data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></li>
                 </ol>
             </div>
             <!-- Catalogue -->
