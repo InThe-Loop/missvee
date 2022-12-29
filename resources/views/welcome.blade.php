@@ -315,7 +315,7 @@
                                         @if(count($hires) > 0)
                                             @foreach ($hires as $product)
                                                 <!-- start single product -->
-                                                <div class="col-md-4 col-sm-6 product m-2">
+                                                <div class="col-md-4 col-sm-6 product hire m-2">
                                                     <a href="#" data-id="{{ $product->id }}" data-toggle="modal" data-target="#hireModal" class="custom-card">
                                                         <div class="card view overlay zoom p-3">
                                                             <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}" height="200px" width="200px">
