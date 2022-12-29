@@ -45,6 +45,9 @@ button.cart-option {
     position: relative;
     padding-bottom: 10px;
 }
+.catalogue .product.hire {
+    width: 23.5%;
+}
 .catalogue .product .product-inner {
     top: 30px;
     left: 2%;
