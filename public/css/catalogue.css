@@ -617,6 +617,9 @@ img.product-details-black-friday {
     .catalogue .product.hire button {
         margin: 5px 0;
     }
+    .catalogue .product.hire .card-body {
+        padding: 0;
+    }
 }
 
 @media (max-width: 575px) {
