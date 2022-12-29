@@ -608,6 +608,12 @@ img.product-details-black-friday {
     .max-h-550 {
         max-height: 620px;
     }
+    .catalogue .product.hire .hire-actions {
+        position: inherit;
+    }
+    .catalogue .product.hire button {
+        margin: 5px 0;
+    }
 }
 
 @media (max-width: 575px) {
