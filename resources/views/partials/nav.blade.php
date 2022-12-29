@@ -75,7 +75,7 @@
                 <hr />
                 <li><a href="{{ route('welcome') }}">Home</a></li>
                 <li><a href="{{ route('about') }}">About</a></li>
-                <li><a href="{{ route('hire') }}">Fore hire</a></li>
+                <li><a href="{{ route('hire') }}">For hire</a></li>
                 <li><a href="{{ route('contact') }}">Contact us</a></li>
                 <li>
                 @guest
