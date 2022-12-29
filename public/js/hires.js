@@ -16,8 +16,8 @@ $(function() {
                 $("#product-sizes").text(response.sizes);
                 $("#hire-name").val(response.name);
                 $("#hire-price").val(response.price);
-                $("#hire-deposit").text(parseInt(response.price * 2));
-                $("#hire-total").text(response.price);
+                $("#hire-deposit").text(response.price);
+                $("#hire-total").text(parseInt(response.price * 2));
                 $("#product-desc").html(response.description);
                 let whatsapp = "https://wa.me/0681037459?text=I would like to make a booking for: " + response.name + " at R" + (response.price * 2);
                 $("#whatsapp").attr("href", whatsapp);
