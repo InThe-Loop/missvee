@@ -129,8 +129,8 @@ button.cart-option {
 .card-img,
 .card-img-top {
     border-radius: 0;
-    min-height: 420px;
-    max-height: 420px;
+    min-height: 500px;
+    max-height: 500px;
 }
 .close-box {
     cursor: pointer;
