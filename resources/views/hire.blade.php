@@ -86,13 +86,13 @@
                                 <div class="card product-inner overlay zoom p-3">
                                     <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}" height="200px" width="200px" />
                                     
-                                    <h5 class="text-dark">{{ $product->name }}</h5>
-                                    <span class="price">R{{ format($product->price) }}</span>
-                                    <span class="sizes">Sizes: {{ $product->sizes }}</span>
+                                    <span class="product-name mt-3">{{ $product->name }}</span>
+                                    <span class="price"><strong>R{{ format($product->price) }}</strong></span>
+                                    <span class="sizes">Sizes: <strong>{{ $product->sizes }}</strong></span>
                                     
                                     <div class="hire-actions">
                                         @if($product->available === 1)
-                                            <button class="btn btn-success no-border">Hire</button>
+                                            <button class="btn btn-success green">Hire</button>
                                         @else
                                             <i class="fa fa-times no"></i> <span class="red">Currently unavailable</span>
                                         @endif

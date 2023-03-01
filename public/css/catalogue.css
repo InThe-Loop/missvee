@@ -738,6 +738,9 @@ img.product-details-black-friday {
 #availability .red {
     color: red;
 }
+.hire-actions .btn-success.green {
+    background-color: green;
+}
 .daterangepicker {
     border-radius: 0px;
     width: fit-content;
