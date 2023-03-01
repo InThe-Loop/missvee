@@ -319,20 +319,20 @@
                                                     <div class="product-inner overlay zoom p-3">
                                                         <a href="#" data-id="{{ $product->id }}" data-toggle="modal" data-target="#hireModal" class="custom-card hires-window">
                                                             <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}" />
-                                                        </a>
-                                                        <h5 class="text-dark">{{ $product->name }}</h5>
-                                                        <span class="price">R{{ format($product->price) }}</span>
-                                                        <span class="sizes">Sizes: {{ $product->sizes }}</span>
+                                                        
+                                                            <span class="product-name">{{ $product->name }}</span>
+                                                            <span class="price"><strong>R{{ format($product->price) }}</strong></span>
+                                                            <br />
+                                                            <span class="sizes">Sizes: <strong>{{ $product->sizes }}</strong></span>
 
-                                                        <div class="hire-actions">
-                                                            @if($product->available === 1)
-                                                                <a href="#" data-id="{{ $product->id }}" data-toggle="modal" data-target="#hireModal" class="custom-card hires-window">
+                                                            <div class="hire-actions">
+                                                                @if($product->available === 1)
                                                                     <button class="btn btn-success no-border">Hire</button>
-                                                                </a>
-                                                            @else
-                                                                <i class="fa fa-times no"></i>
-                                                            @endif
-                                                        </div>
+                                                                @else
+                                                                    <i class="fa fa-times no"></i>
+                                                                @endif
+                                                            </div>
+                                                        </a>
                                                     </div>
                                                 </div>
                                                 <!-- end single product -->
