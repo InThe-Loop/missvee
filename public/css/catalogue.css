@@ -82,9 +82,7 @@ button.cart-option {
 }
 .catalogue .product .product-inner figure img {
     margin: 0 auto;
-    object-fit: fill;
-    min-height: 420px;
-    max-height: 420px;
+    object-fit: cover;
     -webkit-transition: all 0.3s cubic-bezier(0.62, 0.55, 0.38, 0.63);
     -moz-transition: all 0.3s cubic-bezier(0.62, 0.55, 0.38, 0.63);
     -ms-transition: all 0.3s cubic-bezier(0.62, 0.55, 0.38, 0.63);
