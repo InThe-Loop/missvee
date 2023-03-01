@@ -104,7 +104,7 @@
                             <div class="col-md-12">
                                 <form class="hide" id="filter">
                                     <div class="form-group w-25 dis-grid">
-                                        <select class="form-control" id="sort">
+                                        <select class="form-control sort">
                                             <option value="">Sort by price</option>
                                             <option value="">Show All</option>
                                             <option value="asc">Price Low to High</option>
@@ -311,28 +311,29 @@
                             </div>
                             <div class="tab-pane fade show" id="hire" role="tabpanel" aria-labelledby="hire-tab">
                                 <div class="row">
-                                    <div class="col mt-3" id="hire-products">
+                                    <div class="col" id="hire-products">
                                         @if(count($hires) > 0)
                                             @foreach ($hires as $product)
                                                 <!-- start single product -->
-                                                <div class="col-md-4 col-sm-6 product hire m-2">
-                                                    <a href="#" data-id="{{ $product->id }}" data-toggle="modal" data-target="#hireModal" class="custom-card">
-                                                        <div class="card view overlay zoom p-3">
-                                                            <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}" height="200px" width="200px">
-                                                            <div class="card-body">
-                                                                <h5 class="text-dark">{{ $product->name }}</h5>
-                                                                <span class="price">R{{ format($product->price) }}</span>
-                                                                <span class="sizes">Sizes: {{ $product->sizes }}</span>
-                                                                <div class="hire-actions">
-                                                                    @if($product->available === 1)
-                                                                        <button class="btn btn-success no-border">Hire</button>
-                                                                    @else
-                                                                        <i class="fa fa-times no"></i>
-                                                                    @endif
-                                                                </div>
-                                                            </div>
+                                                <div class="product searchable" data-title="{{ $product->name }}" data-fabric="{{ $product->fabric }}" data-color="{{ $product->color }}" data-category="{{ $product->category }}" data-price="{{ $product->price }}">
+                                                    <div class="product-inner overlay zoom p-3">
+                                                        <a href="#" data-id="{{ $product->id }}" data-toggle="modal" data-target="#hireModal" class="custom-card hires-window">
+                                                            <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}" />
+                                                        </a>
+                                                        <h5 class="text-dark">{{ $product->name }}</h5>
+                                                        <span class="price">R{{ format($product->price) }}</span>
+                                                        <span class="sizes">Sizes: {{ $product->sizes }}</span>
+
+                                                        <div class="hire-actions">
+                                                            @if($product->available === 1)
+                                                                <a href="#" data-id="{{ $product->id }}" data-toggle="modal" data-target="#hireModal" class="custom-card hires-window">
+                                                                    <button class="btn btn-success no-border">Hire</button>
+                                                                </a>
+                                                            @else
+                                                                <i class="fa fa-times no"></i>
+                                                            @endif
                                                         </div>
-                                                    </a>
+                                                    </div>
                                                 </div>
                                                 <!-- end single product -->
                                             @endforeach

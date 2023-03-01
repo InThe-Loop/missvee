@@ -90,11 +90,11 @@ $(function () {
     );
 });
 
-$("#sort").on("change", function () {
+$(".sort").on("change", function () {
     let sorter = $(this).val();
     var sorted_items, getSorted = function(selector, attrName) {
         return $(
-            $(selector).toArray().sort(function(a, b){
+            $(selector).toArray().sort(function(a, b) {
                 var aVal = parseInt(a.getAttribute(attrName)),
                     bVal = parseInt(b.getAttribute(attrName));
                 if (sorter == "asc") {
@@ -107,9 +107,8 @@ $("#sort").on("change", function () {
         );
     };
     sorted_items = getSorted('.product.searchable', 'data-price');
-	$('#products').html();
-	$('.products').html();
-    $('#products').html(sorted_items);
+	$('#products, #hire-products').html();
+    $('#products, #hire-products').html(sorted_items);
 });
 
 // Product details

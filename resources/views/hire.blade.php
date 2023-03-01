@@ -15,11 +15,10 @@
         <!-- start filter section -->
         <div class="col-md-2 mt-3 catalogue">
             <h2 class="text-dark">Filters</h2>
-
             <h4 class="text-dark m-0">
                 Price range
             </h4>
-            <div class="form-group p-2">
+            <div class="form-group">
                 <div id="range-slider" class="m-auto">
                     <div id="slider-range"></div>
                     <p id="amount"></p>
@@ -28,38 +27,29 @@
             <h4 class="text-dark m-0">
                 Availability
             </h4>
-            <select class="form-control" id="sort">
-                <option value="">Sort by Availability</option>
+            <select data-filter="available" class="filter-available filter form-control mb-3">
+                <option value="">Filter by Availability</option>
                 <option value="">Show All</option>
-                <option value="asc">Yes</option>
-                <option value="desc">No</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
             </select>
             <h4 class="text-dark m-0">
-                By Category
+                Category
             </h4>
-            <select data-filter="category" class="filter-category filter form-control">
+            <select data-filter="category" class="filter-category filter form-control mb-3">
                 <option value="">Filter by category</option>
                 <option value="">Show All</option>
                 <option value="Women">Women</option>
                 <option value="Men">Men</option>
             </select>
             <h4 class="text-dark m-0">
-                Price
-            </h4>
-            <select class="form-control" id="sort">
-                <option value="">Sort by price</option>
-                <option value="">Show All</option>
-                <option value="asc">Price Low to High</option>
-                <option value="desc">Price High to Low</option>
-            </select>
-            <h4 class="text-dark m-0">
                 Fabric
             </h4>
-            <select data-filter="fabric" class="filter-fabric filter form-control">
+            <select data-filter="fabric" class="filter-fabric filter form-control mb-3">
                 <option value="">Filter by Fabric</option>
                 <option value="">Show All</option>
-                @foreach ($tags as $tag)
-                    <option value="{{ $tag->name }}">{{ $tag->name }}</option>
+                @foreach ($fabrics as $fabric)
+                    <option value="{{ $fabric->fabric }}">{{ $fabric->fabric }}</option>
                 @endforeach
             </select>
             <h4 class="text-dark m-0">
@@ -72,30 +62,40 @@
                     <option value="{{ $item->color }}">{{ ucfirst($item->color) }}</option>
                 @endforeach
             </select>
+            <h2 class="text-dark mt-3">Sort</h2>
+            <h4 class="text-dark m-0">
+                Price
+            </h4>
+            <select class="form-control sort">
+                <option value="">Sort by price</option>
+                <option value="">Show All</option>
+                <option value="asc">Price Low to High</option>
+                <option value="desc">Price High to Low</option>
+            </select>
         </div>
         <!-- end filter section -->
         <!-- start products section -->
-        <div class="col-md-10 mt-3">
+        <div class="catalogue col-md-10 mt-3">
             @if(!empty($products))
                 <!-- start products row -->
-                <div class="row products">
+                <div class="row" id="products">
                     @foreach ($products as $product)
                         <!-- start single product -->
-                        <div class="col-md-4 col-sm-6 product searchable" data-title="{{ $product->name }}" data-fabric="{{ $product->fabric }}" data-color="{{ $product->color }}" data-category="{{ $product->category }}" data-price="{{ $product->price }}">
+                        <div class="col-md-4 col-sm-6 product searchable" data-title="{{ $product->name }}" data-available="{{ $product->available }}" data-fabric="{{ $product->fabric }}" data-color="{{ $product->color }}" data-category="{{ $product->category }}" data-price="{{ $product->price }}">
                             <a href="#" data-id="{{ $product->id }}" data-toggle="modal" data-target="#hireModal" class="custom-card hires-window">
-                                <div class="card view overlay zoom">
-                                    <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}" height="200px" width="200px">
-                                    <div class="card-body">
-                                        <h5 class="text-dark">{{ $product->name }}</h5>
-                                        <span class="price">R{{ format($product->price) }}</span>
-                                        <span class="sizes">Sizes: {{ $product->sizes }}</span>
-                                        <div class="hire-actions">
-                                            @if($product->available === 1)
-                                                <button class="btn btn-success no-border">Hire</button>
-                                            @else
-                                                <i class="fa fa-times no"></i>
-                                            @endif
-                                        </div>
+                                <div class="card product-inner overlay zoom p-3">
+                                    <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}" height="200px" width="200px" />
+                                    
+                                    <h5 class="text-dark">{{ $product->name }}</h5>
+                                    <span class="price">R{{ format($product->price) }}</span>
+                                    <span class="sizes">Sizes: {{ $product->sizes }}</span>
+                                    
+                                    <div class="hire-actions">
+                                        @if($product->available === 1)
+                                            <button class="btn btn-success no-border">Hire</button>
+                                        @else
+                                            <i class="fa fa-times no"></i> <span class="red">Currently unavailable</span>
+                                        @endif
                                     </div>
                                 </div>
                             </a>

@@ -4,6 +4,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title text-dark" id="myModalLabel">Reserve this item</h4>
+                <p id="availability"></p>
                 <button type="button" class="close text-dark close-modal" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

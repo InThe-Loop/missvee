@@ -8,7 +8,6 @@ $(function() {
             method: "GET",
             dataType: "json",
             success: function(response) {
-                // console.log(response);
                 $("#product-name").text(response.name);
                 $("#product-price").text("R" + response.price);
                 $("#product-sizes").text(response.sizes);
@@ -19,6 +18,13 @@ $(function() {
                 $("#product-desc").html(response.description);
                 let whatsapp = "https://wa.me/0681037459?text=I would like to make a booking for: " + response.name + " at R" + (response.price * 2);
                 $("#whatsapp").attr("href", whatsapp);
+
+                if (response.available == 1) {
+                    $("#availability").html('<i class="fa fa-check green"></i> <span class="green">Currently available for hire</span>');
+                }
+                else {
+                    $("#availability").html('<i class="fa fa-times red"></i> <span class="red">Out on hire for the next 3 days. However, you may still reserve the garment for the days after this period.</span>');
+                }
 
                 // console.log(JSON.parse(response.images));
                 let images = "", thumbs = "";

@@ -15,17 +15,16 @@ class HireController extends Controller
         $pagination = 10;
         $hires = Hire::all();
         $allHires = null;
-        $tags = Tag::get();
-        $categories = Category::get();
         $colors = Hire::select('color')->distinct()->get();
+        $fabrics = Hire::select('fabric')->distinct()->get();
+        // $categories = Hire::select('category')->distinct()->get();
         if (!$hires->isEmpty()) {
             $allHires = $hires->random()->paginate($pagination);
         }
         return view('hire')->with([
             'products' => $allHires,
-            'categories' => $categories,
+            'fabrics' => $fabrics,
             'colors' => $colors,
-            'tags' => $tags,
         ]);
     }
 

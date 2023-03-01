@@ -130,8 +130,8 @@ button.cart-option {
 .card-img,
 .card-img-top {
     border-radius: 0;
-    min-height: 500px;
-    max-height: 500px;
+    object-fit: cover;
+    height: 500px;
 }
 .close-box {
     cursor: pointer;
@@ -720,6 +720,22 @@ img.product-details-black-friday {
 }
 
 .hire-actions .fa.no {
+    color: red;
+}
+.hire-actions span {
+    font-size: 12px;
+    vertical-align: super;
+}
+#availability {
+    position: absolute;
+    font-size: 13px;
+    top: 35px;
+}
+#availability .green {
+    color: green;
+}
+.hire-actions .red,
+#availability .red {
     color: red;
 }
 .daterangepicker {
