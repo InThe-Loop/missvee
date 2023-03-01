@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Mail;
+use App\Tag;
 use App\Hire;
+use App\Category;
 use Illuminate\Http\Request;
 use App\Mail\ReservationMailer;
 
@@ -13,11 +15,17 @@ class HireController extends Controller
         $pagination = 10;
         $hires = Hire::all();
         $allHires = null;
+        $tags = Tag::get();
+        $categories = Category::get();
+        $colors = Hire::select('color')->distinct()->get();
         if (!$hires->isEmpty()) {
             $allHires = $hires->random()->paginate($pagination);
         }
         return view('hire')->with([
             'products' => $allHires,
+            'categories' => $categories,
+            'colors' => $colors,
+            'tags' => $tags,
         ]);
     }
 

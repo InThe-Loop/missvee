@@ -2102,6 +2102,13 @@ footer .no-animation {
   font-size: 18px;
 }
 
+li.terms-item {
+	font-size: 13px;
+}
+img.thumbnail {
+	cursor: pointer;
+}
+
 @-webkit-keyframes fadeInRight {
 	from {
 		opacity: 0;

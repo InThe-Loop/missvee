@@ -108,6 +108,7 @@ $("#sort").on("change", function () {
     };
     sorted_items = getSorted('.product.searchable', 'data-price');
 	$('#products').html();
+	$('.products').html();
     $('#products').html(sorted_items);
 });
 

@@ -26,7 +26,7 @@
                         </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="3000">
-                        <div class="fill" style="background-image:url({{ asset('images/banners/black_dress.jpg') }});"></div>
+                        <div class="fill" style="background-image:url({{ asset('images/banners/models.jpg') }});"></div>
                         <div class="carousel-caption">
                             <h2 class="slideUp">Grand entrance uniquely</h2>
                             <p class="animated fadeInRight">Corporate events | Gala events</p>

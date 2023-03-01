@@ -1,9 +1,7 @@
 $(function() {
-    // $("#hireModal").modal("show");
-    // $(".close-modal").on("click", function() {
-    //     $("#hireModal").modal("hide");
-    // });
-    $("body").on("click", '[data-toggle="modal"]', function() {
+    // Filters
+    
+    $("body").on("click", '.hires-window', function() {
         let id = $(this).data('id');
         $.ajax({
             url: "/reservations/fetch/" + id,
@@ -24,24 +22,32 @@ $(function() {
 
                 // console.log(JSON.parse(response.images));
                 let images = "", thumbs = "";
-                let link = window.location.href
+                let link = window.location.href;
                 let parts = link.split("/");
                 let url = parts[0] + "//" + parts[2];
                 $.each(JSON.parse(response.images), function( index, value ) {
-                    images += '<img src="' + url + '\\storage\\' + value + '" alt="' + response.name + '" />';
+                    images += '<img id="image-'+ (index + 1) +'" class="main-img" src="' + url + '/storage/' + value + '" alt="' + response.name + '" />';
                     thumbs += '<div class="img-item">\
-                        <a href="#" data-id="' + (index + 1) + '">\
-                            <img src="' + url + '\\storage\\' + value + '" alt="' + response.name + '" />\
-                        </a>\
+                        <img data-id="' + (index + 1) + '" class="thumbnail" src="' + url + '/storage/' + value + '" alt="' + response.name + '" />\
                     </div>';
                 });
-                $("#img-showcase").html(images);
-                $("#img-select").html(thumbs);
+                $(".img-showcase").html(images);
+                $(".img-select").html(thumbs);
             },
             error: function(xhr) {
-                console.log(xhr)
+                console.log(xhr);
             }
         });
+    });
+
+    // Toggle images in popup modal
+    $(document).on("click", ".thumbnail", function(event) {
+        event.preventDefault();
+        if ($(".thumbnail").length > 1) {
+            let id = $(this).data("id");
+            $(".main-img").hide();
+            $("#image-" + id).toggle();
+        }
     });
 
     $(".close-box").on("click", function() {

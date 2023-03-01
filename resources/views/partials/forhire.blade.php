@@ -35,15 +35,6 @@
                                 </div>
                             </div>
                             <div class="col p-0">
-                                <div class="review-heading mt-5">Terms and conditions of hire</div>
-                                <p>
-                                    <li>All items carry a 100% refundable deposit.</li>
-                                    <li>Drop-offs by no later than 10h00 Mon to Sat.</li>
-                                    <li>A R100.00 late fee will be deducted from the deposit for every 1 hour after 10h00.</li>
-                                    <li>Item to be returned in the same condition as they were picked up. Fair wear and tear excepted.</li>
-                                    <li>Copy of identity documentation (ID/Passport/Driver's Licence) and proof of residence required upon pickup.</li>
-                                    <li>Failure to return the garment will constitute theft and as such a case will be reported to the SAPS and deposit forfeited.</p>
-                                </p>
                                 <form id="reservation-form" class="review-form mt-5" method="POST">
                                     @csrf
                                     <input type="hidden" id="hire-name" />
@@ -95,15 +86,27 @@
                                         <div class="ping"></div>
                                     </div>
                                 </form>
+                                <div class="review-heading mt-5">Terms and conditions of hire</div>
+                                <p>
+                                    <li class="terms-item">The minimum hire duration is 24 hours.</li>
+                                    <li class="terms-item">All items carry a 100% refundable deposit.</li>
+                                    <li class="terms-item">Drop-offs by no later than 10h00 Mon to Sat.</li>
+                                    <li class="terms-item">A deliberate and obvious tear will carry up to 70% deposit deduction.</li>
+                                    <li class="terms-item">A R100.00 late fee will be deducted from the deposit for every 1 hour from 10am till 4pm Mon to Sat.</li>
+                                    <li class="terms-item">Item to be returned in the same condition as they were picked up. Normal fair wear and tear excepted.</li>
+                                    <li class="terms-item">Copy of identity documentation (ID/Passport/Driver's Licence) and proof of residence required upon pickup.</li>
+                                    <li class="terms-item">If garments are returned 24 hours after the time they were supposed to be returned, 100% of the deposit will be forfeited.</li>
+                                    <li class="terms-item">Failure to return the garment will constitute theft and as such a criminal case will be reported to the SAPS and the deposit forfeited.</p>
+                                </p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-5">
                         <!-- card left -->
                         <div class="img-display">
-                            <div id="img-showcase" class="img-showcase zoom-img">[imgs]</div>
+                            <div class="img-showcase zoom-img">[imgs]</div>
                         </div>
-                        <div id="img-select" class="img-select">[thumbs]</div>
+                        <div class="img-select">[thumbs]</div>
                     </div>
                 </div>
             </div>
