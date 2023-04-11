@@ -2,7 +2,7 @@ $(function() {
     // Check cookie
     if ($.cookie('missvee') != "accepted") {
         // $('#cookieAcceptBar').show();
-        // $('#cookieModal').modal('show');
+        $('#cookieModal').modal('show');
     }
     // Assign cookie on click
     $('#cookieAcceptBarConfirm').on('click',function(){
