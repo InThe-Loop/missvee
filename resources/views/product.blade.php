@@ -44,7 +44,7 @@
                                 @endif
                                 <div class="product-name">
                                     {{ $product->name }}
-                                    <span class="badge badge-success">{{ $stockLevel }}</span>
+                                    <span class="badge @if ($stockLevel == 'In Stock')badge-success @else badge-danger @endif">{{ $stockLevel }}</span>
                                 </div>
                                 <div class="reviews-counter">
                                     <div class="rate">
@@ -76,7 +76,7 @@
                                         <input type="hidden" name="id" value="{{ $product->id }}">
                                         <input type="hidden" name="name" value="{{ $product->name }}">
                                         <input type="hidden" name="price" value="{{ $price }}">
-                                        <button type="submit" class="btn btn-secondary no-border mt-3 w-100">Add to Cart</button>
+                                        <button type="submit" class="btn btn-secondary no-border mt-3 w-100" @if ($stockLevel == 'Out Of Stock') disabled="disabled" @endif>Add to Cart</button>
                                     </form>
                                 </div>
                             </div>

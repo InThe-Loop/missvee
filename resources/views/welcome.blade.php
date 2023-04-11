@@ -148,6 +148,7 @@
                                     <div class="col" id="products">
                                         @if(count($products) > 0)
                                             @foreach ($products as $product)
+                                                @php $stockLevel = getStockLevel($product->quantity) @endphp
                                                 @if(strtolower($product->category->name) == "women")
                                                     @if($product->black_friday_price === 0)
                                                         @php $price = $product->price @endphp
@@ -188,6 +189,8 @@
                                                                         data-price="{{ $price }}"
                                                                         data-slug="{{ $product->slug }}"></button>
                                                                     </form>
+                                                                @else
+                                                                    <span class="badge @if ($stockLevel == 'In Stock')badge-success @else badge-danger @endif">{{ $stockLevel }}</span>
                                                                 @endif
                                                             </div>
                                                         </div>
