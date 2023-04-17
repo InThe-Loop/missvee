@@ -17,11 +17,11 @@ class WelcomePageController extends Controller
         $tags = Tag::get();
         $categories = Category::get();
         $colors = Product::select('color')->distinct()->get();
-        $women = Product::latest()->where('category_id', '=', 10)->paginate(3);
-        $men = Product::latest()->where('category_id', '=', 11)->paginate(3);
-        $hair = Product::latest()->where('category_id', '=', 12)->paginate(3);
+        $women = Product::latest()->where('category_id', '=', 10)->paginate(8);
+        $men = Product::latest()->where('category_id', '=', 11)->paginate(8);
+        $hair = Product::latest()->where('category_id', '=', 12)->paginate(8);
         $hotProducts = Product::inRandomOrder()->where('featured', '=', 1)->take(4)->get();
-        $hires = Hire::paginate(3);
+        $hires = Hire::paginate(8);
 
         if ($request->ajax()) {
             return view('partials.paginator')->with([
