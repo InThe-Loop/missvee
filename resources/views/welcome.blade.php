@@ -144,205 +144,230 @@
                         </div>
                         <div class="tab-content" id="categories">
                             <div class="tab-pane fade show active" id="women" role="tabpanel" aria-labelledby="women-tab">
-                                <div class="row">
-                                    <div class="col" id="products">
-                                        @if(count($products) > 0)
-                                            @foreach ($products as $product)
-                                                @php $stockLevel = getStockLevel($product->quantity) @endphp
-                                                @if(strtolower($product->category->name) == "women")
-                                                    @if($product->black_friday_price === 0)
-                                                        @php $price = $product->price @endphp
-                                                    @else
-                                                        @php $price = $product->black_friday_price @endphp
-                                                    @endif
-                                                    <!-- Single product -->
-                                                    <div class="product searchable" data-title="{{ $product->name }}" data-fabric="{{ $product->tags[0]->name }}" data-color="{{ $product->color }}" data-category="{{ $product->category->name }}" data-price="{{ $price }}">
-                                                        <div class="product-inner">
-                                                            <figure>
-                                                                <a href="{{ route('shop.show', $product->slug) }}">
-                                                                    <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}">
-                                                                </a>
-                                                                @if($product->black_friday_price > 0)
-                                                                    <img src="{{ asset('images/icons/black_fri.jpg') }}" class="black-fri" alt="Black Friday Deal" />
-                                                                @endif
-                                                                <figcaption>
-                                                                    <span class="product-name">{{ $product->name }}</span>
-                                                                    @if($product->black_friday_price === 0)
-                                                                        <span class="price">R{{ format($product->price) }}</span>
-                                                                    @else
-                                                                        <span class="now-price">R{{ format($product->black_friday_price) }}</span>
-                                                                        <span class="line-through">was R{{ format($product->price) }}</span>
+                                <div id="women-products">
+                                    <div class="row">
+                                        <div class="col">
+                                            @if(count($women) > 0)
+                                                @foreach ($women as $product)
+                                                    @php $stockLevel = getStockLevel($product->quantity) @endphp
+                                                    @if(strtolower($product->category->name) == "women")
+                                                        @if($product->black_friday_price === 0)
+                                                            @php $price = $product->price @endphp
+                                                        @else
+                                                            @php $price = $product->black_friday_price @endphp
+                                                        @endif
+                                                        <!-- Single product -->
+                                                        <div class="product searchable" data-title="{{ $product->name }}" data-fabric="{{ $product->tags[0]->name }}" data-color="{{ $product->color }}" data-category="{{ $product->category->name }}" data-price="{{ $price }}">
+                                                            <div class="product-inner">
+                                                                <figure>
+                                                                    <a href="{{ route('shop.show', $product->slug) }}">
+                                                                        <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}">
+                                                                    </a>
+                                                                    @if($product->black_friday_price > 0)
+                                                                        <img src="{{ asset('images/icons/black_fri.jpg') }}" class="black-fri" alt="Black Friday Deal" />
                                                                     @endif
-                                                                </figcaption>
-                                                            </figure>
-                                                            <div class="product-actions text-center">
-                                                                @if ($product->quantity > 0)
-                                                                    <form action="{{ route('cart.store') }}" method="POST">
-                                                                        @csrf()
-                                                                        <input type="hidden" name="id" value="{{ $product->id }}">
-                                                                        <input type="hidden" name="name" value="{{ $product->name }}">
-                                                                        <input type="hidden" name="price" value="{{ $price }}">
-                                                                        <button title="Add item to cart" type="submit" class="fas fa-cart-plus btn btn-secondary"></button>
-                                                                        <button title="Share on Facebook" type="button" class="fa fa-share btn btn-secondary fb-product-share"
-                                                                        data-title="{{ $product->name }}"
-                                                                        data-desc="{{ $product->description }}"
-                                                                        data-price="{{ $price }}"
-                                                                        data-slug="{{ $product->slug }}"></button>
-                                                                    </form>
-                                                                @else
-                                                                    <span class="badge @if ($stockLevel == 'In Stock')badge-success @else badge-danger @endif">{{ $stockLevel }}</span>
-                                                                @endif
+                                                                    <figcaption>
+                                                                        <span class="product-name">{{ $product->name }}</span>
+                                                                        @if($product->black_friday_price === 0)
+                                                                            <span class="price">R{{ format($product->price) }}</span>
+                                                                        @else
+                                                                            <span class="now-price">R{{ format($product->black_friday_price) }}</span>
+                                                                            <span class="line-through">was R{{ format($product->price) }}</span>
+                                                                        @endif
+                                                                    </figcaption>
+                                                                </figure>
+                                                                <div class="product-actions text-center">
+                                                                    @if ($product->quantity > 0)
+                                                                        <form action="{{ route('cart.store') }}" method="POST">
+                                                                            @csrf()
+                                                                            <input type="hidden" name="id" value="{{ $product->id }}">
+                                                                            <input type="hidden" name="name" value="{{ $product->name }}">
+                                                                            <input type="hidden" name="price" value="{{ $price }}">
+                                                                            <button title="Add item to cart" type="submit" class="fas fa-cart-plus btn btn-secondary"></button>
+                                                                            <button title="Share on Facebook" type="button" class="fa fa-share btn btn-secondary fb-product-share"
+                                                                            data-title="{{ $product->name }}"
+                                                                            data-desc="{{ $product->description }}"
+                                                                            data-price="{{ $price }}"
+                                                                            data-slug="{{ $product->slug }}"></button>
+                                                                        </form>
+                                                                    @else
+                                                                        <span class="badge @if ($stockLevel == 'In Stock')badge-success @else badge-danger @endif">{{ $stockLevel }}</span>
+                                                                    @endif
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <!-- //Single product -->
-                                                @endif
-                                            @endforeach
-                                        @else
-                                            <p class="text-center text-dark">Sorry, there are no products in stock yet!</p>
-                                        @endif
+                                                        <!-- //Single product -->
+                                                    @endif
+                                                @endforeach
+                                            @else
+                                                <p class="text-center text-dark">Sorry, there are no products in stock yet!</p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="row default-paginator">
+                                        <div class="col mt-3">
+                                            {!! $women->links('vendor.pagination.custom') !!}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="men" role="tabpanel" aria-labelledby="men-tab">
-                                <div class="row">
-                                    <div class="col" id="men-products">
-                                        @if(count($products) > 0)
-                                            @php $men = 0 @endphp
-                                            @foreach ($products as $product)
-                                                @if(strtolower($product->category->name) == "men")
-                                                    @php $men++ @endphp
-                                                    @if($product->black_friday_price === 0)
-                                                        @php $price = $product->price @endphp
-                                                    @else
-                                                        @php $price = $product->black_friday_price @endphp
-                                                    @endif
-                                                    <!-- Single product -->
-                                                    <div class="product searchable" data-title="{{ $product->name }}" data-fabric="{{ $product->tags[0]->name }}" data-color="{{ $product->color }}" data-category="{{ $product->category->name }}" data-price="{{ $price }}">
-                                                        <div class="product-inner">
-                                                            <figure>
-                                                                <a href="{{ route('shop.show', $product->slug) }}">
-                                                                    <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}">
-                                                                </a>
-                                                                @if($product->black_friday_price > 0)
-                                                                    <img src="{{ asset('images/icons/black_fri.jpg') }}" class="black-fri" alt="Black Friday Deal" />
-                                                                @endif
-                                                                <figcaption>
-                                                                    <span class="product-name">{{ $product->name }}</span>
-                                                                    @if($product->black_friday_price === 0)
-                                                                        <span class="price">R{{ format($product->price) }}</span>
-                                                                    @else
-                                                                        <span class="now-price">R{{ format($product->black_friday_price) }}</span>
-                                                                        <span class="line-through">was R{{ format($product->price) }}</span>
+                                <div id="men-products">
+                                    <div class="row">
+                                        <div class="col">
+                                            @if(count($men) > 0)
+                                                @php $men = 0 @endphp
+                                                @foreach ($men as $product)
+                                                    @if(strtolower($product->category->name) == "men")
+                                                        @php $men++ @endphp
+                                                        @if($product->black_friday_price === 0)
+                                                            @php $price = $product->price @endphp
+                                                        @else
+                                                            @php $price = $product->black_friday_price @endphp
+                                                        @endif
+                                                        <!-- Single product -->
+                                                        <div class="product searchable" data-title="{{ $product->name }}" data-fabric="{{ $product->tags[0]->name }}" data-color="{{ $product->color }}" data-category="{{ $product->category->name }}" data-price="{{ $price }}">
+                                                            <div class="product-inner">
+                                                                <figure>
+                                                                    <a href="{{ route('shop.show', $product->slug) }}">
+                                                                        <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}">
+                                                                    </a>
+                                                                    @if($product->black_friday_price > 0)
+                                                                        <img src="{{ asset('images/icons/black_fri.jpg') }}" class="black-fri" alt="Black Friday Deal" />
                                                                     @endif
-                                                                </figcaption>
-                                                            </figure>
-                                                            <div class="product-actions text-center">
-                                                                @if ($product->quantity > 0)
-                                                                    <form action="{{ route('cart.store') }}" method="POST">
-                                                                        @csrf()
-                                                                        <input type="hidden" name="id" value="{{ $product->id }}">
-                                                                        <input type="hidden" name="name" value="{{ $product->name }}">
-                                                                        <input type="hidden" name="price" value="{{ $price }}">
-                                                                        <button title="Add item to cart" type="submit" class="fas fa-cart-plus btn btn-secondary"></button>
-                                                                        <button title="Share on Facebook" type="button" class="fa fa-share btn btn-secondary fb-product-share"
-                                                                        data-title="{{ $product->name }}"
-                                                                        data-desc="{{ $product->description }}"
-                                                                        data-price="{{ $price }}"
-                                                                        data-slug="{{ $product->slug }}"></button>
-                                                                    </form>
-                                                                @endif
+                                                                    <figcaption>
+                                                                        <span class="product-name">{{ $product->name }}</span>
+                                                                        @if($product->black_friday_price === 0)
+                                                                            <span class="price">R{{ format($product->price) }}</span>
+                                                                        @else
+                                                                            <span class="now-price">R{{ format($product->black_friday_price) }}</span>
+                                                                            <span class="line-through">was R{{ format($product->price) }}</span>
+                                                                        @endif
+                                                                    </figcaption>
+                                                                </figure>
+                                                                <div class="product-actions text-center">
+                                                                    @if ($product->quantity > 0)
+                                                                        <form action="{{ route('cart.store') }}" method="POST">
+                                                                            @csrf()
+                                                                            <input type="hidden" name="id" value="{{ $product->id }}">
+                                                                            <input type="hidden" name="name" value="{{ $product->name }}">
+                                                                            <input type="hidden" name="price" value="{{ $price }}">
+                                                                            <button title="Add item to cart" type="submit" class="fas fa-cart-plus btn btn-secondary"></button>
+                                                                            <button title="Share on Facebook" type="button" class="fa fa-share btn btn-secondary fb-product-share"
+                                                                            data-title="{{ $product->name }}"
+                                                                            data-desc="{{ $product->description }}"
+                                                                            data-price="{{ $price }}"
+                                                                            data-slug="{{ $product->slug }}"></button>
+                                                                        </form>
+                                                                    @endif
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <!-- //Single product -->
-                                                @endif
-                                            @endforeach
-                                            @if($men == 0)
-                                                <p class="text-center text-dark">Sorry, there are no men's products in stock yet!</p>
+                                                        <!-- //Single product -->
+                                                    @endif
+                                                @endforeach
+                                            @else
+                                                <p class="text-center text-dark">Sorry, there are no products in stock yet!</p>
                                             @endif
-                                        @else
-                                            <p class="text-center text-dark">Sorry, there are no products in stock yet!</p>
-                                        @endif
+                                        </div>
+                                    </div>
+                                    <div class="row default-paginator">
+                                        <div class="col mt-3">
+                                            {!! $men->links('vendor.pagination.custom') !!}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="hair" role="tabpanel" aria-labelledby="hair-tab">
-                                <div class="row">
-                                    <div class="col" id="hair-products">
-                                        @if(count($products) > 0)
-                                            @foreach ($products as $product)
-                                                @if(strtolower($product->category->name) == "hair")
-                                                    <!-- Single product -->
-                                                    <div class="product searchable" data-title="{{ $product->name }}" data-fabric="{{ $product->tags[0]->name }}" data-color="{{ $product->color }}" data-category="{{ $product->category->name }}" data-price="{{ $product->price }}">
-                                                        <div class="product-inner">
-                                                            <figure class="hair">
-                                                                <a href="{{ route('shop.show', $product->slug) }}">
-                                                                    <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}">
-                                                                </a>
-                                                                <figcaption>
-                                                                    {{ $product->name }}
-                                                                    <span class="price">R{{ format($product->price) }}</span>
-                                                                </figcaption>
-                                                            </figure>
-                                                            <div class="product-actions text-center">
-                                                                @if ($product->quantity > 0)
-                                                                    <form action="{{ route('cart.store') }}" method="POST">
-                                                                        @csrf()
-                                                                        <input type="hidden" name="id" value="{{ $product->id }}">
-                                                                        <input type="hidden" name="name" value="{{ $product->name }}">
-                                                                        <input type="hidden" name="price" value="{{ $product->price }}">
-                                                                        <button title="Add item to cart" type="submit" class="fas fa-cart-plus btn btn-secondary"></button>
-                                                                        <button title="Share on Facebook" type="button" class="fa fa-share btn btn-secondary fb-product-share"
-                                                                        data-title="{{ $product->name }}"
-                                                                        data-desc="{{ $product->description }}"
-                                                                        data-price="{{ $product->price }}"
-                                                                        data-slug="{{ $product->slug }}"></button>
-                                                                    </form>
-                                                                @endif
+                                <div id="hair-products">
+                                    <div class="row">
+                                        <div class="col">
+                                            @if(count($hair) > 0)
+                                                @foreach ($hair as $product)
+                                                    @if(strtolower($product->category->name) == "hair")
+                                                        <!-- Single product -->
+                                                        <div class="product searchable" data-title="{{ $product->name }}" data-fabric="{{ $product->tags[0]->name }}" data-color="{{ $product->color }}" data-category="{{ $product->category->name }}" data-price="{{ $product->price }}">
+                                                            <div class="product-inner">
+                                                                <figure class="hair">
+                                                                    <a href="{{ route('shop.show', $product->slug) }}">
+                                                                        <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}">
+                                                                    </a>
+                                                                    <figcaption>
+                                                                        {{ $product->name }}
+                                                                        <span class="price">R{{ format($product->price) }}</span>
+                                                                    </figcaption>
+                                                                </figure>
+                                                                <div class="product-actions text-center">
+                                                                    @if ($product->quantity > 0)
+                                                                        <form action="{{ route('cart.store') }}" method="POST">
+                                                                            @csrf()
+                                                                            <input type="hidden" name="id" value="{{ $product->id }}">
+                                                                            <input type="hidden" name="name" value="{{ $product->name }}">
+                                                                            <input type="hidden" name="price" value="{{ $product->price }}">
+                                                                            <button title="Add item to cart" type="submit" class="fas fa-cart-plus btn btn-secondary"></button>
+                                                                            <button title="Share on Facebook" type="button" class="fa fa-share btn btn-secondary fb-product-share"
+                                                                            data-title="{{ $product->name }}"
+                                                                            data-desc="{{ $product->description }}"
+                                                                            data-price="{{ $product->price }}"
+                                                                            data-slug="{{ $product->slug }}"></button>
+                                                                        </form>
+                                                                    @endif
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <!-- //Single product -->
-                                                @endif
-                                            @endforeach
-                                        @else
-                                            <p class="text-center text-dark">Sorry, there are no products in stock yet!</p>
-                                        @endif
+                                                        <!-- //Single product -->
+                                                    @endif
+                                                @endforeach
+                                            @else
+                                                <p class="text-center text-dark">Sorry, there are no products in stock yet!</p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="row default-paginator">
+                                        <div class="col mt-3">
+                                            {!! $hair->links('vendor.pagination.custom') !!}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade show" id="hire" role="tabpanel" aria-labelledby="hire-tab">
-                                <div class="row">
-                                    <div class="col" id="hire-products">
-                                        @if(count($hires) > 0)
-                                            @foreach ($hires as $product)
-                                                <!-- start single product -->
-                                                <div class="product searchable" data-title="{{ $product->name }}" data-fabric="{{ $product->fabric }}" data-color="{{ $product->color }}" data-category="{{ $product->category }}" data-price="{{ $product->price }}">
-                                                    <div class="product-inner overlay zoom p-3">
-                                                        <a href="#" data-id="{{ $product->id }}" data-toggle="modal" data-target="#hireModal" class="custom-card hires-window">
-                                                            <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}" />
-                                                        
-                                                            <span class="product-name">{{ $product->name }}</span>
-                                                            <span class="price"><strong>R{{ format($product->price) }}</strong></span>
-                                                            <br />
-                                                            <span class="sizes">Sizes: <strong>{{ $product->sizes }}</strong></span>
+                                <div id="hire-products">
+                                    <div class="row">
+                                        <div class="col">
+                                            @if(count($hires) > 0)
+                                                @foreach ($hires as $product)
+                                                    <!-- start single product -->
+                                                    <div class="product searchable" data-title="{{ $product->name }}" data-fabric="{{ $product->fabric }}" data-color="{{ $product->color }}" data-category="{{ $product->category }}" data-price="{{ $product->price }}">
+                                                        <div class="product-inner overlay zoom p-3">
+                                                            <a href="#" data-id="{{ $product->id }}" data-toggle="modal" data-target="#hireModal" class="custom-card hires-window">
+                                                                <img src="{{ productImage($product->image) }}" class="card-img-top img-fluid" alt="{{ $product->name }}" />
+                                                            
+                                                                <span class="product-name">{{ $product->name }}</span>
+                                                                <span class="price"><strong>R{{ format($product->price) }}</strong></span>
+                                                                <br />
+                                                                <span class="sizes">Sizes: <strong>{{ $product->sizes }}</strong></span>
 
-                                                            <div class="hire-actions">
-                                                                @if($product->available === 1)
-                                                                    <button class="btn btn-success no-border">Hire</button>
-                                                                @else
-                                                                    <i class="fa fa-times no"></i>
-                                                                @endif
-                                                            </div>
-                                                        </a>
+                                                                <div class="hire-actions">
+                                                                    @if($product->available === 1)
+                                                                        <button class="btn btn-success no-border">Hire</button>
+                                                                    @else
+                                                                        <i class="fa fa-times no"></i>
+                                                                    @endif
+                                                                </div>
+                                                            </a>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <!-- end single product -->
-                                            @endforeach
-                                        @else
-                                            <p class="text-center text-dark">Sorry, there are no products for hire in stock yet!</p>
-                                        @endif
+                                                    <!-- end single product -->
+                                                @endforeach
+                                            @else
+                                                <p class="text-center text-dark">Sorry, there are no products for hire in stock yet!</p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="row default-paginator">
+                                        <div class="col mt-3">
+                                            {!! $hires->links('vendor.pagination.custom') !!}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -355,5 +380,4 @@
     </div>
 </div>
 <!-- //Page content -->
-
 @endsection

@@ -570,7 +570,33 @@ img.product-details-black-friday {
     min-height: 230px;
     max-height: 230px;
 }
-@media screen and (min-width: 992px){
+
+.catalogue nav.paginator {
+    text-align: center;
+}
+.catalogue .page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #000;
+}
+.catalogue .page-item .page-link {
+    z-index: 3;
+    color: #000;
+}
+.catalogue .page-item .page-link:hover {
+    color: #fff;
+}
+.catalogue .pagination li {
+    padding: 3px;
+}
+.catalogue .disabled .page-link {
+    color: #212529 !important;
+    opacity: 0.5 !important;
+    border-radius: 0;
+}
+
+@media screen and (min-width: 992px) {
     .product-imgs{
         display: flex;
         flex-direction: column;

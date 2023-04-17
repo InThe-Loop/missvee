@@ -107,8 +107,8 @@ $(".sort").on("change", function () {
         );
     };
     sorted_items = getSorted('.product.searchable', 'data-price');
-	$('#products, #hire-products').html();
-    $('#products, #hire-products').html(sorted_items);
+	$('#women-products, #hire-products').html();
+    $('#women-products, #hire-products').html(sorted_items);
 });
 
 // Product details

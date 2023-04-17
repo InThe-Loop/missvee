@@ -48,6 +48,7 @@
         <script src="{{ asset('js/catalogue.js') }}"></script>
         <script src="{{ asset('js/contact.js') }}"></script>
         <script src="{{ asset('js/hires.js') }}"></script>
+        <script src="{{ asset('js/paginator.js') }}"></script>
 
         @yield('scripts')
     </body>
