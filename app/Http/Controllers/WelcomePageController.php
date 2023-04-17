@@ -25,22 +25,22 @@ class WelcomePageController extends Controller
 
         if ($request->ajax()) {
             return view('partials.paginator')->with([
-                'women'=> $women,
                 'men'=> $men,
                 'hair'=> $hair,
+                'women'=> $women,
                 'hires' => $hires,
             ]);
         }
 
         return view('welcome')->with([
-            'women'=> $women,
-            'men' => $men,
-            'hair' => $hair,
+            'men' => $men ?? null,
+            'hair' => $hair ?? null,
+            'women'=> $women ?? null,
+            'hires' => $hires ?? null,
             'hotProducts' => $hotProducts,
-            'tags' => $tags,
             'categories' => $categories,
             'colors' => $colors,
-            'hires' => $hires,
+            'tags' => $tags,
         ]);
     }
 }
