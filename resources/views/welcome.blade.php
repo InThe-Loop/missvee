@@ -147,7 +147,7 @@
                                 <div id="women-products">
                                     <div class="row">
                                         <div class="col">
-                                            @if(count($women) > 0)
+                                            @if(is_array($women))
                                                 @foreach ($women as $product)
                                                     @php $stockLevel = getStockLevel($product->quantity) @endphp
                                                     @if(strtolower($product->category->name) == "women")
@@ -216,10 +216,8 @@
                                     <div class="row">
                                         <div class="col">
                                             @if(is_array($men))
-                                                @php $men = 0 @endphp
                                                 @foreach ($men as $product)
                                                     @if(strtolower($product->category->name) == "men")
-                                                        @php $men++ @endphp
                                                         @if($product->black_friday_price === 0)
                                                             @php $price = $product->price @endphp
                                                         @else
@@ -282,7 +280,7 @@
                                 <div id="hair-products">
                                     <div class="row">
                                         <div class="col">
-                                            @if(count($hair) > 0)
+                                            @if(is_array($hair))
                                                 @foreach ($hair as $product)
                                                     @if(strtolower($product->category->name) == "hair")
                                                         <!-- Single product -->
@@ -334,7 +332,7 @@
                                 <div id="hire-products">
                                     <div class="row">
                                         <div class="col">
-                                            @if(count($hires) > 0)
+                                            @if(is_array($hires))
                                                 @foreach ($hires as $product)
                                                     <!-- start single product -->
                                                     <div class="product searchable" data-title="{{ $product->name }}" data-fabric="{{ $product->fabric }}" data-color="{{ $product->color }}" data-category="{{ $product->category }}" data-price="{{ $product->price }}">
