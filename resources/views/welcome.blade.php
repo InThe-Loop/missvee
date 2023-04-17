@@ -215,7 +215,7 @@
                                 <div id="men-products">
                                     <div class="row">
                                         <div class="col">
-                                            @if(!empty($men))
+                                            @if(is_array($men))
                                                 @php $men = 0 @endphp
                                                 @foreach ($men as $product)
                                                     @if(strtolower($product->category->name) == "men")
